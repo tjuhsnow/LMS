@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Instructor" max_length="40" name="x_thjuh_lms_instructor" type="collection"/>
+</database>
