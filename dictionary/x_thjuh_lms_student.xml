@@ -1,3 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Student" max_length="40" name="x_thjuh_lms_student" type="collection"/>
+    <element label="Student" max_length="40" name="x_thjuh_lms_student" type="collection">
+        <element label="First Name" max_length="40" name="first_name" type="string"/>
+        <element display="true" label="ID" max_length="40" name="id" type="string"/>
+        <element label="Last Name" max_length="40" name="last_name" type="string"/>
+        <element label="Middle Name" max_length="40" name="middle_name" type="string"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+        <element choice="1" label="Type" max_length="40" name="type" type="choice">
+            <choice/>
+        </element>
+        <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="user"/>
+        </index>
+    </element>
 </database>

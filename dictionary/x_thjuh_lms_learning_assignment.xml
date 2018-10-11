@@ -1,3 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Learning Assignment" max_length="40" name="x_thjuh_lms_learning_assignment" type="collection"/>
+    <element label="Learning Assignment" max_length="40" name="x_thjuh_lms_learning_assignment" type="collection">
+        <element label="Assignment Date" max_length="40" name="assignment_date" type="glide_date_time"/>
+        <element label="Completion Date" max_length="40" name="completion_date" type="glide_date_time"/>
+        <element label="Curriculum" max_length="32" name="curriculum" reference="x_thjuh_lms_curriculum" type="reference"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#9;var dn = current.student ? current.student.id : &quot;UnknownStudent&quot;;&#13;&#10;&#9;&#13;&#10;&#9;dn += &quot;-&quot;;&#13;&#10;&#13;&#10;&#9;switch (current.type.toString()) {&#13;&#10;&#9;&#9;case &quot;item&quot;:&#13;&#10;&#9;&#9;&#9;dn += current.item.getDisplayValue() || &quot;UnknownItem&quot;;&#13;&#10;&#9;&#9;&#9;break;&#13;&#10;&#9;&#9;case &quot;program&quot;:&#13;&#10;&#9;&#9;&#9;dn += current.program.getDisplayValue() || &quot;UnknownProgram&quot;;&#13;&#10;&#9;&#9;&#9;break;&#13;&#10;&#9;&#9;case &quot;curriculum&quot;:&#13;&#10;&#9;&#9;&#9;dn += current.curriculum.getDisplayValue() || &quot;UnknownCurriculum&quot;;&#13;&#10;&#9;&#9;&#9;break;&#13;&#10;&#9;&#9;case &quot;&quot;:&#13;&#10;&#9;&#9;&#9;dn += &quot;UnknownType&quot;;&#13;&#10;&#9;&#9;&#9;break;&#13;&#10;&#9;&#9;default:&#13;&#10;&#9;&#9;&#9;dn += &quot;UnknownType&quot;;&#13;&#10;&#9;}&#13;&#10;&#9;&#13;&#10;&#9;dn += &quot;-&quot;;&#13;&#10;&#13;&#10;&#9;return dn + (current.roster ? current.roster.getDisplayValue() : &quot;UnknownRoster&quot;);&#13;&#10;&#13;&#10;})(current);" display="true" label="Display Value" max_length="200" name="display_value" type="string" virtual="true"/>
+        <element label="Enrollment Date" max_length="40" name="enrollment_date" type="glide_date_time"/>
+        <element label="Expiration Date" max_length="40" name="expiration_date" type="glide_date_time"/>
+        <element label="Item" max_length="32" name="item" reference="x_thjuh_lms_item" type="reference"/>
+        <element label="Next Action Date" max_length="40" name="next_action_date" type="glide_date_time"/>
+        <element label="Program" max_length="32" name="program" reference="x_thjuh_lms_program" type="reference"/>
+        <element label="Roster" max_length="32" name="roster" reference="x_thjuh_lms_roster" type="reference"/>
+        <element choice="1" label="Status" max_length="40" name="status" type="choice">
+            <choice/>
+        </element>
+        <element choice="1" label="Status ID" max_length="40" name="status_id" type="choice">
+            <choice/>
+        </element>
+        <element label="Student" max_length="32" name="student" reference="x_thjuh_lms_student" type="reference"/>
+        <element choice="1" label="Type" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Item" sequence="100" value="item"/>
+                <element inactive_on_update="false" label="Program" sequence="200" value="program"/>
+                <element inactive_on_update="false" label="Curriculum" sequence="300" value="curriculum"/>
+            </choice>
+        </element>
+        <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="roster"/>
+        </index>
+        <index name="index2">
+            <element name="item"/>
+        </index>
+        <index name="index3">
+            <element name="student"/>
+        </index>
+        <index name="index4">
+            <element name="curriculum"/>
+        </index>
+        <index name="index5">
+            <element name="program"/>
+        </index>
+        <index name="index6">
+            <element name="user"/>
+        </index>
+    </element>
 </database>
