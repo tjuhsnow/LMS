@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-11 01:13:12</sys_created_on>
+        <sys_id>5ae3f10adbc12300d61452b0cf9619fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_thjuh_lms_offering.x_thjuh_lms.offering_user</sys_name>
+        <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
+        <sys_security_acl display_value="x_thjuh_lms_offering">dee3f10adbc12300d61452b0cf9619fb</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_5ae3f10adbc12300d61452b0cf9619fe</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-11 01:13:12</sys_updated_on>
+        <sys_user_role display_value="x_thjuh_lms.offering_user" name="x_thjuh_lms.offering_user">9ee3f10adbc12300d61452b0cf9619df</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

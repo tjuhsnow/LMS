@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Program" max_length="40" name="x_thjuh_lms_program" type="collection"/>
+</database>

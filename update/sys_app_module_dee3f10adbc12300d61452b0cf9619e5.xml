@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="LMS">4e326982dbc163406d31892a489619fa</application>
+        <assessment/>
+        <content_page/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Offerings</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_thjuh_lms_offering</name>
+        <order/>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles>x_thjuh_lms.offering_user</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-11 01:13:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>dee3f10adbc12300d61452b0cf9619e5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Offerings</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
+        <sys_update_name>sys_app_module_dee3f10adbc12300d61452b0cf9619e5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-11 01:13:12</sys_updated_on>
+        <timeline_page/>
+        <title>Offerings</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>
