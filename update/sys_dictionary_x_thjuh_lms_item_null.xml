@@ -53,15 +53,15 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-11 01:08:48</sys_created_on>
-        <sys_id>75e275c6dbc12300d61452b0cf961908</sys_id>
+        <sys_id>51c24ec2db052300d61452b0cf961924</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_thjuh_lms_item</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
-        <sys_update_name>sys_dictionary_x_thjuh_lms_item_null</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-11 01:08:48</sys_updated_on>
+        <sys_update_name>sys_dictionary_x_thjuh_lms_item_NULL</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-10-11 02:18:10</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
