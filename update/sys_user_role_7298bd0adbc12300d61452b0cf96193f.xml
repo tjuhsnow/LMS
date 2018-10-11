@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description>Role that can only be assigned to SN Admin who can Read/Create/Update/Delete any record in LMS application scope. Contains LMS Admin role</description>
+        <elevated_privilege>false</elevated_privilege>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_thjuh_lms.superadmin</name>
+        <requires_subscription>-1</requires_subscription>
+        <scoped_admin>false</scoped_admin>
+        <suffix>superadmin</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-11 01:35:47</sys_created_on>
+        <sys_id>7298bd0adbc12300d61452b0cf96193f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>x_thjuh_lms.superadmin</sys_name>
+        <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
+        <sys_update_name>sys_user_role_7298bd0adbc12300d61452b0cf96193f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-11 01:36:26</sys_updated_on>
+    </sys_user_role>
+</record_update>
