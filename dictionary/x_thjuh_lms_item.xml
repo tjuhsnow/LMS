@@ -5,11 +5,14 @@
         <element label="Criteria" max_length="40" name="criteria" type="string"/>
         <element label="Delivery Method ID" max_length="40" name="delivery_method_id" type="string"/>
         <element label="Domain ID" max_length="40" name="domain_id" type="string"/>
-        <element display="true" label="ID" max_length="100" name="id" type="string"/>
+        <element label="ID" max_length="100" name="id" type="string"/>
+        <element choice="1" label="Priority Level" max_length="40" name="priority_level" type="choice">
+            <choice/>
+        </element>
         <element label="Revision Date" max_length="40" name="revision_date" type="glide_date_time"/>
         <element label="Revision Number" max_length="40" name="revision_number" type="string"/>
         <element label="Source ID" max_length="40" name="source_id" type="string"/>
-        <element label="Title" max_length="100" name="title" type="string"/>
+        <element display="true" label="Title" max_length="100" name="title" type="string"/>
         <element label="Total Count" max_length="40" name="total_count" type="string"/>
         <element choice="1" label="Type" max_length="40" name="type" type="choice">
             <choice/>
@@ -17,5 +20,8 @@
         <element choice="1" label="Type ID" max_length="40" name="type_id" type="choice">
             <choice/>
         </element>
+        <index name="index">
+            <element name="title"/>
+        </index>
     </element>
 </database>

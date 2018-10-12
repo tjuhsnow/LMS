@@ -4,12 +4,18 @@
         <element display="true" label="ID" max_length="40" name="id" type="string"/>
         <element label="Last Name" max_length="40" name="last_name" type="string"/>
         <element label="Middle Name" max_length="40" name="middle_name" type="string"/>
-        <element label="Name" max_length="40" name="name" type="string"/>
-        <element choice="1" label="Type" max_length="40" name="type" type="choice">
-            <choice/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#9;&#13;&#10;&#9;return current.first_name + &quot; &quot; + current.middle_name + &quot; &quot; + current.last_name;&#13;&#10;&#13;&#10;})(current);" label="Name" max_length="40" name="name" type="string" virtual="true"/>
+        <element choice="1" default="internal" label="Type" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Internal - Has SN Account" sequence="100" value="internal"/>
+                <element inactive_on_update="false" label="External - No SN Account" sequence="200" value="external"/>
+            </choice>
         </element>
         <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
         <index name="index">
+            <element name="id"/>
+        </index>
+        <index name="index2">
             <element name="user"/>
         </index>
     </element>

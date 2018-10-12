@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_script">
+    <sys_transform_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <map display_value="Learning Assignment Import">6428b5eedb096300d61452b0cf9619b7</map>
+        <order>100</order>
+        <script><![CDATA[(function runTransformScript(source, map, log, target /*undefined onStart*/ ) {
+
+	//Log start event
+	gs.info("LMS: Importing Learning Assignment records from 'Learning Assignment Bulk Load' Data source");
+
+})(source, map, log, target);]]></script>
+        <sys_class_name>sys_transform_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-12 16:44:45</sys_created_on>
+        <sys_id>1da25a62db896300d61452b0cf961910</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>onStart</sys_name>
+        <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
+        <sys_update_name>sys_transform_script_1da25a62db896300d61452b0cf961910</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-12 16:44:45</sys_updated_on>
+        <when>onStart</when>
+    </sys_transform_script>
+</record_update>

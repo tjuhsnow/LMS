@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_script">
+    <sys_transform_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <map display_value="Student Import">26b9b922db496300d61452b0cf9619cd</map>
+        <order>200</order>
+        <script><![CDATA[(function runTransformScript(source, map, log, target /*undefined onStart*/ ) {
+
+	//Check for valid source.u_user_id; if empty generate a temporary id for the student record and type
+	//If not empty, and has a matching sys_user record populate user on target table
+	if(gs.nil(source.u_user_id)){
+		target.id ="lms-" + source.u_last_name + source.u_first_name.charAt(0);
+		target.type = "external";
+	}
+	else{
+		var user = new GlideRecord("sys_user");
+		if(user.get('user_name', source.u_user_id)){
+			target.type = "internal";
+			target.user = user;
+		}
+		else{
+			target.type = "Pending";
+		}
+	}
+
+})(source, map, log, target);]]></script>
+        <sys_class_name>sys_transform_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-12 15:58:04</sys_created_on>
+        <sys_id>7ef7c2aadb496300d61452b0cf9619b5</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>onBefore</sys_name>
+        <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
+        <sys_update_name>sys_transform_script_7ef7c2aadb496300d61452b0cf9619b5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-12 16:40:28</sys_updated_on>
+        <when>onBefore</when>
+    </sys_transform_script>
+</record_update>
