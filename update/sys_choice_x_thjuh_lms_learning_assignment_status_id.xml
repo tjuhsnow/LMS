@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="status_id" table="x_thjuh_lms_learning_assignment" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status_id</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Classroom-Complete</label>
+            <language>en</language>
+            <name>x_thjuh_lms_learning_assignment</name>
+            <sequence>0</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-10-13 04:44:02</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>0257bcbadb01a300d61452b0cf9619d5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-10-13 04:44:02</sys_updated_on>
+            <value>Classroom-Complete</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>status_id</element>
+            <name>x_thjuh_lms_learning_assignment</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-10-13 04:44:02</sys_created_on>
+            <sys_id>8a57bcbadb01a300d61452b0cf9619d5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>status_id</sys_name>
+            <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
+            <sys_update_name>sys_choice_x_thjuh_lms_learning_assignment_status_id</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-10-13 04:44:02</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

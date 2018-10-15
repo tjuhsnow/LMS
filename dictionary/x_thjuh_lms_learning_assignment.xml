@@ -11,10 +11,14 @@
         <element label="Program" max_length="32" name="program" reference="x_thjuh_lms_program" type="reference"/>
         <element label="Roster" max_length="32" name="roster" reference="x_thjuh_lms_roster" type="reference"/>
         <element choice="1" label="Status" max_length="40" name="status" type="choice">
-            <choice/>
+            <choice>
+                <element inactive_on_update="false" label="Instructor-led Class Completed" sequence="0" value="Instructor-led Class Completed"/>
+            </choice>
         </element>
         <element choice="1" label="Status ID" max_length="40" name="status_id" type="choice">
-            <choice/>
+            <choice>
+                <element inactive_on_update="false" label="Classroom-Complete" sequence="0" value="Classroom-Complete"/>
+            </choice>
         </element>
         <element label="Student" max_length="32" name="student" reference="x_thjuh_lms_student" type="reference"/>
         <element choice="1" label="Type" max_length="40" name="type" type="choice">

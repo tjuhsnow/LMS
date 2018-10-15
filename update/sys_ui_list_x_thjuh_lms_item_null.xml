@@ -2,18 +2,108 @@
     <sys_ui_list parent="" relationship="" sys_domain="global" table="x_thjuh_lms_item" version="2" view="">
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>sys_created_on</element>
-            <list_id display_value="x_thjuh_lms_item" element="NULL" name="x_thjuh_lms_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">6ab91e46db452300d61452b0cf96194f</list_id>
+            <element>title</element>
+            <list_id display_value="x_thjuh_lms_item" element="NULL" name="x_thjuh_lms_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">b93adea6db896300d61452b0cf961938</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-11 03:58:26</sys_created_on>
-            <sys_id>22b91e46db452300d61452b0cf961950</sys_id>
+            <sys_created_on>2018-10-12 17:17:32</sys_created_on>
+            <sys_id>713adea6db896300d61452b0cf961939</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-11 03:58:26</sys_updated_on>
+            <sys_updated_on>2018-10-12 17:17:32</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>id</element>
+            <list_id display_value="x_thjuh_lms_item" element="NULL" name="x_thjuh_lms_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">b93adea6db896300d61452b0cf961938</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-10-12 17:17:32</sys_created_on>
+            <sys_id>f13adea6db896300d61452b0cf961939</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-10-12 17:17:32</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>priority_level</element>
+            <list_id display_value="x_thjuh_lms_item" element="NULL" name="x_thjuh_lms_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">b93adea6db896300d61452b0cf961938</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-10-12 17:17:32</sys_created_on>
+            <sys_id>753adea6db896300d61452b0cf961939</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-10-12 17:17:32</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>revision_date</element>
+            <list_id display_value="x_thjuh_lms_item" element="NULL" name="x_thjuh_lms_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">b93adea6db896300d61452b0cf961938</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-10-12 17:17:32</sys_created_on>
+            <sys_id>f53adea6db896300d61452b0cf961939</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-10-12 17:17:32</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>revision_number</element>
+            <list_id display_value="x_thjuh_lms_item" element="NULL" name="x_thjuh_lms_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">b93adea6db896300d61452b0cf961938</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-10-12 17:17:32</sys_created_on>
+            <sys_id>793adea6db896300d61452b0cf961939</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-10-12 17:17:32</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>type</element>
+            <list_id display_value="x_thjuh_lms_item" element="NULL" name="x_thjuh_lms_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">b93adea6db896300d61452b0cf961938</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-10-12 17:17:32</sys_created_on>
+            <sys_id>f93adea6db896300d61452b0cf961939</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-10-12 17:17:32</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_created_on</element>
+            <list_id display_value="x_thjuh_lms_item" element="NULL" name="x_thjuh_lms_item" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">b93adea6db896300d61452b0cf961938</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-10-12 17:17:32</sys_created_on>
+            <sys_id>7d3adea6db896300d61452b0cf961939</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-10-12 17:17:32</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -27,10 +117,10 @@
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-11 03:58:26</sys_created_on>
+            <sys_created_on>2018-10-12 17:17:32</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>6ab91e46db452300d61452b0cf96194f</sys_id>
+            <sys_id>b93adea6db896300d61452b0cf961938</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_thjuh_lms_item</sys_name>
             <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
@@ -38,7 +128,7 @@
             <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
             <sys_update_name>sys_ui_list_x_thjuh_lms_item_null</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-11 03:58:26</sys_updated_on>
+            <sys_updated_on>2018-10-12 17:17:32</sys_updated_on>
             <sys_user/>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>

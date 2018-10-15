@@ -9,6 +9,7 @@
             <choice>
                 <element inactive_on_update="false" label="Internal - Has SN Account" sequence="100" value="internal"/>
                 <element inactive_on_update="false" label="External - No SN Account" sequence="200" value="external"/>
+                <element inactive_on_update="false" label="Pending - Waiting for User Sync" sequence="300" value="pending"/>
             </choice>
         </element>
         <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>

@@ -34,7 +34,7 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 	var user = new GlideRecord("sys_user");
 	if(user.get('user_name', current.id)){
-		current.user = user;
+		current.user = user.getUniqueValue();
 		current.update();
 	}
 })(current, previous);]]></script>
@@ -44,7 +44,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>72b452e2db896300d61452b0cf96194e</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Populate user from student ID</sys_name>
         <sys_overrides/>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
@@ -52,7 +52,7 @@
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sys_script_72b452e2db896300d61452b0cf96194e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-12 17:04:25</sys_updated_on>
+        <sys_updated_on>2018-10-12 17:10:20</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>
