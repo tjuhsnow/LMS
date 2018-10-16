@@ -6,6 +6,7 @@
         <element label="Delivery Method ID" max_length="40" name="delivery_method_id" type="string"/>
         <element label="Domain ID" max_length="40" name="domain_id" type="string"/>
         <element label="ID" max_length="100" name="id" type="string"/>
+        <element label="Notify" max_length="40" name="notify" type="boolean"/>
         <element choice="1" default="moderate" label="Priority Level" max_length="40" name="priority_level" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Critical" value="critical"/>

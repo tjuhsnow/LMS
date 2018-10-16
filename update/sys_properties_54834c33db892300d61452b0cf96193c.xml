@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>sys_id of inbound action created by fix script</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_thjuh_lms.learning.assignment.inbound.action.sys_id</name>
+        <read_roles/>
+        <suffix>learning.assignment.inbound.action.sys_id</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-16 03:31:59</sys_created_on>
+        <sys_id>54834c33db892300d61452b0cf96193c</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>x_thjuh_lms.learning.assignment.inbound.action.sys_id</sys_name>
+        <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
+        <sys_update_name>sys_properties_54834c33db892300d61452b0cf96193c</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-10-16 05:51:11</sys_updated_on>
+        <type>string</type>
+        <value>3a73e43bdbc92300d61452b0cf9619f5</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=54834c33db892300d61452b0cf96193c"/>
+</record_update>

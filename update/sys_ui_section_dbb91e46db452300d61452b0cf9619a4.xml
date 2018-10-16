@@ -4,125 +4,139 @@
             <element>title</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-13 04:45:00</sys_created_on>
-            <sys_id>149770fadb01a300d61452b0cf96191e</sys_id>
+            <sys_created_on>2018-10-15 22:07:35</sys_created_on>
+            <sys_id>77597ea3db852300d61452b0cf961916</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_thjuh_lms_item" sys_domain="global" view="Default view">dbb91e46db452300d61452b0cf9619a4</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-13 04:45:00</sys_updated_on>
+            <sys_updated_on>2018-10-15 22:07:35</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>id</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-10-15 22:07:35</sys_created_on>
+            <sys_id>f7597ea3db852300d61452b0cf961916</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_thjuh_lms_item" sys_domain="global" view="Default view">dbb91e46db452300d61452b0cf9619a4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-10-15 22:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.begin_split</element>
-            <position>1</position>
+            <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-13 04:45:00</sys_created_on>
-            <sys_id>989770fadb01a300d61452b0cf96191e</sys_id>
+            <sys_created_on>2018-10-15 22:07:35</sys_created_on>
+            <sys_id>7b597ea3db852300d61452b0cf961916</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_thjuh_lms_item" sys_domain="global" view="Default view">dbb91e46db452300d61452b0cf9619a4</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-13 04:45:00</sys_updated_on>
+            <sys_updated_on>2018-10-15 22:07:35</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>id</element>
-            <position>2</position>
+            <element>active</element>
+            <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-13 04:45:00</sys_created_on>
-            <sys_id>1c9770fadb01a300d61452b0cf96191e</sys_id>
+            <sys_created_on>2018-10-15 22:07:35</sys_created_on>
+            <sys_id>fb597ea3db852300d61452b0cf961916</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_thjuh_lms_item" sys_domain="global" view="Default view">dbb91e46db452300d61452b0cf9619a4</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-13 04:45:00</sys_updated_on>
+            <sys_updated_on>2018-10-15 22:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>priority_level</element>
-            <position>3</position>
+            <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-13 04:45:00</sys_created_on>
-            <sys_id>9c9770fadb01a300d61452b0cf96191e</sys_id>
+            <sys_created_on>2018-10-15 22:07:35</sys_created_on>
+            <sys_id>7f597ea3db852300d61452b0cf961916</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_thjuh_lms_item" sys_domain="global" view="Default view">dbb91e46db452300d61452b0cf9619a4</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-13 04:45:00</sys_updated_on>
+            <sys_updated_on>2018-10-15 22:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>revision_date</element>
-            <position>4</position>
+            <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-13 04:45:00</sys_created_on>
-            <sys_id>109770fadb01a300d61452b0cf96191f</sys_id>
+            <sys_created_on>2018-10-15 22:07:35</sys_created_on>
+            <sys_id>ff597ea3db852300d61452b0cf961916</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_thjuh_lms_item" sys_domain="global" view="Default view">dbb91e46db452300d61452b0cf9619a4</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-13 04:45:00</sys_updated_on>
+            <sys_updated_on>2018-10-15 22:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>5</position>
+            <position>6</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-13 04:45:00</sys_created_on>
-            <sys_id>909770fadb01a300d61452b0cf96191f</sys_id>
+            <sys_created_on>2018-10-15 22:07:35</sys_created_on>
+            <sys_id>73597ea3db852300d61452b0cf961917</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_thjuh_lms_item" sys_domain="global" view="Default view">dbb91e46db452300d61452b0cf9619a4</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-13 04:45:00</sys_updated_on>
+            <sys_updated_on>2018-10-15 22:07:35</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>active</element>
-            <position>6</position>
+            <element>notify</element>
+            <position>7</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-13 04:45:00</sys_created_on>
-            <sys_id>149770fadb01a300d61452b0cf96191f</sys_id>
+            <sys_created_on>2018-10-15 22:07:35</sys_created_on>
+            <sys_id>f3597ea3db852300d61452b0cf961917</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_thjuh_lms_item" sys_domain="global" view="Default view">dbb91e46db452300d61452b0cf9619a4</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-13 04:45:00</sys_updated_on>
+            <sys_updated_on>2018-10-15 22:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>type</element>
-            <position>7</position>
+            <position>8</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-13 04:45:00</sys_created_on>
-            <sys_id>949770fadb01a300d61452b0cf96191f</sys_id>
+            <sys_created_on>2018-10-15 22:07:35</sys_created_on>
+            <sys_id>77597ea3db852300d61452b0cf961917</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_thjuh_lms_item" sys_domain="global" view="Default view">dbb91e46db452300d61452b0cf9619a4</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-13 04:45:00</sys_updated_on>
+            <sys_updated_on>2018-10-15 22:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>revision_number</element>
-            <position>8</position>
+            <position>9</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-13 04:45:00</sys_created_on>
-            <sys_id>189770fadb01a300d61452b0cf96191f</sys_id>
+            <sys_created_on>2018-10-15 22:07:35</sys_created_on>
+            <sys_id>f7597ea3db852300d61452b0cf961917</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_thjuh_lms_item" sys_domain="global" view="Default view">dbb91e46db452300d61452b0cf9619a4</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-13 04:45:00</sys_updated_on>
+            <sys_updated_on>2018-10-15 22:07:35</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

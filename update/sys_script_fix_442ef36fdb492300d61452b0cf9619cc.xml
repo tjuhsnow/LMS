@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <before>false</before>
+        <description>Create inbound action on sys_data_source table using sncTrigger function in utils to overcome cross scope issues.&#13;
+</description>
+        <flush_cache>false</flush_cache>
+        <name>Create inbound action in global scope</name>
+        <record_for_rollback>false</record_for_rollback>
+        <run_once>true</run_once>
+        <script><![CDATA[var helper = new x_thjuh_lms.utils();
+
+var script = 'var action = new GlideRecord("sysevent_in_email_action"); \n';
+script += 'action.newRecord(); \n';
+script += 'action.name = "LMS: Learning Assignment Bulk Load"; \n';
+script += 'action.sys_scope.setDisplayValue("Global"); \n';
+script += 'action.sys_package.setDisplayValue("Global"); \n';
+script += 'action.table = "sys_data_source"; \n';
+script += 'action.action ="record_action"; \n';
+script += 'action.active = true; \n';
+script += 'action.stop_processing = true; \n';
+script += 'action.order = 0; \n';
+script += 'action.type = "new"; \n';
+script += 'action.from = gs.getProperty("x_thjuh_lms.service.account.sys_id"); \n';
+script += 'action.description = "Inbound action to create new data source"; \n';
+script += 'action.template = null; \n';
+
+script += 'var actionScript = "' + "(function runAction(current, event, email, logger, classifier) { gs.info('LMS: received new email to load data from: ' + email.from); var applicatonScope = '' + 'LMS' + ''; current.sys_package.setDisplayValue(applicatonScope); current.sys_scope.setDisplayValue(applicatonScope); current.name = '' + 'LMS Bulk: ' + '' + new GlideDateTime(); current.import_set_table_name = gs.getProperty('' + 'x_thjuh_lms.learining.assignment.staging.table' + ''); current.file_retrieval_method = '' + 'Attachment' + ''; current.type = '' + 'File' + ''; current.format = '' + 'CSV' + ''; new x_thjuh_lms.utils().loadImportSet(current.insert(), gs.getProperty('' + 'x_thjuh_lms.learning.assignment.transform.maps' + ''));})(current, event, email, logger, classifier);" + '"; \n';
+
+script += 'action.script = actionScript; \n';
+script += 'gs.setProperty("x_thjuh_lms.learning.assignment.inbound.action.sys_id", action.insert()); \n';
+script += 'gs.info("Created inbound action for Learining Assignment import via email: " + gs.getProperty("x_thjuh_lms.learning.assignment.inbound.action.sys_id")); \n';
+
+helper.sncTrigger(script, "LMS: create inbound action in global", 0, 30);]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-16 03:36:38</sys_created_on>
+        <sys_id>442ef36fdb492300d61452b0cf9619cc</sys_id>
+        <sys_mod_count>35</sys_mod_count>
+        <sys_name>Create inbound action in global scope</sys_name>
+        <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
+        <sys_update_name>sys_script_fix_442ef36fdb492300d61452b0cf9619cc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-16 05:47:55</sys_updated_on>
+        <unloadable>true</unloadable>
+    </sys_script_fix>
+</record_update>
