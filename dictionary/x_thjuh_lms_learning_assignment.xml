@@ -9,6 +9,8 @@
         <element label="Item" max_length="32" name="item" reference="x_thjuh_lms_item" type="reference"/>
         <element label="Next Action Date" max_length="40" name="next_action_date" type="glide_date_time"/>
         <element label="Program" max_length="32" name="program" reference="x_thjuh_lms_program" type="reference"/>
+        <element label="Request" max_length="32" name="request" reference="sc_request" type="reference"/>
+        <element label="Requested Item" max_length="32" name="requested_item" reference="sc_req_item" type="reference"/>
         <element label="Roster" max_length="32" name="roster" reference="x_thjuh_lms_roster" type="reference"/>
         <element choice="1" label="Status" max_length="40" name="status" type="choice">
             <choice>
@@ -30,22 +32,28 @@
         </element>
         <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
         <index name="index">
-            <element name="roster"/>
+            <element name="request"/>
         </index>
         <index name="index2">
-            <element name="item"/>
+            <element name="roster"/>
         </index>
         <index name="index3">
-            <element name="student"/>
+            <element name="item"/>
         </index>
         <index name="index4">
-            <element name="curriculum"/>
+            <element name="student"/>
         </index>
         <index name="index5">
-            <element name="program"/>
+            <element name="curriculum"/>
         </index>
         <index name="index6">
+            <element name="program"/>
+        </index>
+        <index name="index7">
             <element name="user"/>
+        </index>
+        <index name="index8">
+            <element name="requested_item"/>
         </index>
     </element>
 </database>
