@@ -13,11 +13,12 @@ utils.prototype = {
 		this.servicePW = gs.getProperty("x_thjuh_lms.service.account.pw");
 		this.cart = new sn_sc.CartJS();
 		this.NOW = new GlideDateTime();
+		this.createRequestJobId = "edc0b4b3db0d2300d61452b0cf9619b3"; /* sys_id of sysauto_script to create requests from learning assignments */
 	},
 
-	/* --- 
-	Addes new ritm to existing request. requred parms: request sys_id, item sys_id; optional parms: quantity. 
-	Variables on created new item are to be set ----TO DO---- 
+	/* 
+		Addes new ritm to existing request. requred parms: request sys_id, item sys_id; optional parms: quantity. 
+		Variables on created new item are to be set ----TO DO---- 
 	*/ 
 	addRitmToReq: function(reqID, itemID, quantity){
 		quantity = quantity || 1;
@@ -27,11 +28,11 @@ utils.prototype = {
 
 	/*
 		Submits new request with multiple items defined in items array for reqFor user
-		ex: items = [{ 'sysparm_id': 'sc_cat_item_sys_id_1', 'sysparm_quantity': '1', 'variables':{ 'var1': 'val1', 'var2': 'val2'} }, 
-					 { 'sysparm_id': 'sc_cat_item_sys_id_2', 'sysparm_quantity': '1', 'variables':{ 'var1': 'val1', 'var2': 'val2'} } ];
+		ex: items = [{ "sysparm_id": "sc_cat_item_sys_id_1", "sysparm_quantity": "1", "variables":{ "var1": "val1", "var2": "val2"} }, 
+					 { "sysparm_id": "sc_cat_item_sys_id_2", "sysparm_quantity": "1", "variables":{ "var1": "val1", "var2": "val2"} } ]
 	*/				 
 	submitNewRequest: function(reqFor, items, request){
-		request = request || {}; request.requested_for = reqFor;
+		request = request || {}; request.requested_for = reqFor; request.short_description = request.short_description || "LMS: Access request";
 		for(var i in items){
 			var quantity = items[i]['sysparm_quantity'].toString() || '1';
 			var item = {'sysparm_id': items[i]['sysparm_id'], 'sysparm_quantity': quantity, 'variables': items[i]['variables']};
@@ -40,7 +41,10 @@ utils.prototype = {
 		return this.cart.submitOrder(request);
 	},
 
-	/* --- Create record on snc_trigger table via REST post. CREATE availbale in global scope. Use to execute scripts in global scope. --- */
+	/* 
+		Create record on snc_trigger table via REST post. CREATE availbale in global scope. 
+		Use to execute scripts in global scope.
+	*/
 	sncTrigger: function(script, name, type, delay){
 		name = name || "Triggered by LMS application";
 		type = type || "0";
@@ -51,8 +55,10 @@ utils.prototype = {
 		return this._executeSNRest(endPoint, 'post', JSON.stringify(body));
 	},
 
-	/* --- Loads importset table on datasource and runs transform maps (comma separated transformap ids) --- */	
-	/* Sample: var helper= new x_thjuh_lms.utils(); helper.loadImportSet("eea771eedb096300d61452b0cf96190b","02893922db496300d61452b0cf96193b,26b9b922db496300d61452b0cf9619cd,6428b5eedb096300d61452b0cf9619b7"); */
+	/*
+		Loads importset table on datasource and runs transform maps (comma separated transformap ids)
+		Sample: var helper= new x_thjuh_lms.utils(); helper.loadImportSet(dataSourceSys,"transMapSys1, transMapSys2,.."); 
+	 */
 	loadImportSet: function(dataSourceID, transformMapIDs) {
 		var name = "Load Import Set: " + dataSourceID;
 		var script = 'var dataSource = new GlideRecord("sys_data_source");'
@@ -65,12 +71,13 @@ utils.prototype = {
 		+ 'var transformWorker = new GlideImportSetTransformerWorker(importSetRec.sys_id, "' + transformMapIDs + '");'
 		+ 'transformWorker.setBackground(true);'
 		+ 'transformWorker.start();';
+		//add to run "LMS: Transform Learning Assignments to Requests" scheduled job here: gs.executeNow(gr);
 		gs.info("Prakash: success triggering loadImportSet function from script include. \n dataSourceID: " + dataSourceID + "; \n transformMapIDs: " + transformMapIDs);
 
 		return this.sncTrigger(script, name, 0, 30);
 	},
 
-	/* --- Execute rest message and return response ---*/	
+	/*  Execute rest message and return response  */	
 	_executeSNRest: function(url, method, body){
 		var request = new sn_ws.RESTMessageV2();
 		request.setEndpoint(url);
@@ -82,13 +89,16 @@ utils.prototype = {
 		return request.execute();
 	},
 
-	/* --- Add item to cart --- */ 
+	/*  Add item to cart  */ 
 	_addItemToCart: function(item){
 		var cart = new sn_sc.CartJS();
 		cart.addToCart(item);
 	},
 
-	/* --- add delay in seconds to glide datetime obj and subtract tzoffset. Default http post datetime ignore tzoffset causing diffrence in expected datetime to be posted to the record --- */
+	/*
+		Add delay in seconds to glide datetime obj and subtract tzoffset. 
+		Default http post datetime ignore tzoffset causing diffrence in expected datetime to be posted to the record
+	*/
 	_httpDateTime: function(gdt, sec){
 		sec = parseInt(sec) || 0;
 		gdt.addSeconds(sec);
@@ -102,13 +112,13 @@ utils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-12 02:25:10</sys_created_on>
         <sys_id>edebc352db816300d61452b0cf961940</sys_id>
-        <sys_mod_count>109</sys_mod_count>
+        <sys_mod_count>117</sys_mod_count>
         <sys_name>utils</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sys_script_include_edebc352db816300d61452b0cf961940</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-16 06:30:46</sys_updated_on>
+        <sys_updated_on>2018-10-16 13:45:08</sys_updated_on>
     </sys_script_include>
 </record_update>

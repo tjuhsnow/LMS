@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <conditional>false</conditional>
+        <name>LMS: Transform Learning Assignments to Requests</name>
+        <run_as display_value="Prakash Parvataneni">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2018-10-16 06:49:16</run_start>
+        <run_time>1970-01-01 05:00:00</run_time>
+        <run_type>on_demand</run_type>
+        <script><![CDATA[var itemSysId = gs.getProperty("x_thjuh_lms.catalog.item.sys_id");
+//var query = "completion_dateISNOTEMPTY^sys_created_onONToday@javascript:gs.beginningOfToday()@javascript:gs.endOfToday()^requestISEMPTY";
+var query = "";
+var gr = new GlideAggregate("x_thjuh_lms_learning_assignment");
+gr.addEncodedQuery(query);
+gr.addAggregate('COUNT', 'student');
+gr.groupBy('student');
+gr.query();
+while(gr.next()){
+	gs.info("Processing completed learning items for " + gr.student.sys_id);
+	var items = [];
+	var course = new GlideRecord("x_thjuh_lms_learning_assignment");
+	course.addEncodedQuery(query);
+	course.addQuery("student", gr.student.sys_id);
+	course.query();
+	while(course.next()){
+		var vars = {};
+		vars.learning_assignment_ref = course.getUniqueValue();
+		vars.item = course.item.sys_id.toString();
+		vars.completion_date = course.completion_date.getDisplayValue();
+		vars.status = course.getValue('status');
+		if(course.student.type != 'internal'){
+			vars.employee_type = "external_pending";
+			vars.lms_id = course.student.id.toString();
+			vars.first_name = course.student.first_name.toString();
+			vars.last_name = course.student.last_name.toString();
+			vars.middle_initial = course.student.middle_name.toString();
+		}
+		else{
+			vars.employee_type = 'internal';
+			vars.employee = course.student.user.getUniqueValue();
+		}
+		items.push({sysparm_id: itemSysId, sysparm_quantity: 1, variables: vars});
+	}
+
+	gs.info("Sree - " + gr.student.getDisplayValue() + ": \n" + JSON.stringify(items, null, 2));
+}]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-16 06:50:00</sys_created_on>
+        <sys_id>edc0b4b3db0d2300d61452b0cf9619b3</sys_id>
+        <sys_mod_count>31</sys_mod_count>
+        <sys_name>LMS: Transform Learning Assignments to Requests</sys_name>
+        <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
+        <sys_update_name>sysauto_script_edc0b4b3db0d2300d61452b0cf9619b3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-16 14:18:36</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

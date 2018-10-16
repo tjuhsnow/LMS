@@ -3,7 +3,7 @@
         <active>true</active>
         <availability>on_both</availability>
         <billable>false</billable>
-        <category display_value="Training">b9059d1edb0d2300d61452b0cf9619c4</category>
+        <category/>
         <cost>0</cost>
         <custom_cart/>
         <delivery_plan display_value="DEFAULT">523da512c611228900811a37c97c2014</delivery_plan>
@@ -23,7 +23,7 @@
         <mobile_picture/>
         <mobile_picture_type>use_desktop_picture</mobile_picture_type>
         <model/>
-        <name>EPIC Training</name>
+        <name>LMS: Training Request &amp; Access</name>
         <no_cart>false</no_cart>
         <no_order>false</no_order>
         <no_order_now>false</no_order_now>
@@ -39,24 +39,24 @@
         <recurring_frequency/>
         <recurring_price>0</recurring_price>
         <roles/>
-        <sc_catalogs>e0d08b13c3330100c8b837659bba8fb4</sc_catalogs>
+        <sc_catalogs/>
         <sc_ic_item_staging/>
         <sc_ic_version/>
-        <short_description>EPIC Training: Request EPIC Access</short_description>
+        <short_description>LMS: Training Request &amp; Access</short_description>
         <show_variable_help_on_load>false</show_variable_help_on_load>
         <start_closed>false</start_closed>
         <sys_class_name>sc_cat_item</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-11 15:47:15</sys_created_on>
         <sys_id>52bbf812db492300d61452b0cf96198a</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>EPIC Training</sys_name>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>LMS: Training Request &amp; Access</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sc_cat_item_52bbf812db492300d61452b0cf96198a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-11 17:38:40</sys_updated_on>
+        <sys_updated_on>2018-10-16 13:46:41</sys_updated_on>
         <template/>
         <type>item</type>
         <use_sc_layout>true</use_sc_layout>
