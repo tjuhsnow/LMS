@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_script_action">
+    <sysevent_script_action action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition_script/>
+        <description/>
+        <event_name>x_thjuh_lms.populate.vars.on.lms.ritm</event_name>
+        <name>Populate variable on LMS RITM</name>
+        <order>100</order>
+        <script><![CDATA[gs.info("LMS: executing script action 'Populate variable on LMS RITM'");
+
+var logErrorMsg = "LMS: Script action 'Populate variable on LMS RITM' error. Message: ";
+populateVariables();
+
+function populateVariables(){
+	try{
+		var mtom = new GlideRecord('sc_item_option_mtom');
+		mtom.addQuery('request_item.request.sys_id', event.parm1.toString());
+		mtom.addQuery('sc_item_option.item_option_new.name', 'learning_assignment_ref');
+		mtom.addNullQuery('sc_item_option.value');
+		mtom.addQuery('request_item.active', true);
+		mtom.query();
+		if(mtom.next()){
+			var ritm = new GlideRecord("sc_req_item");
+			if(ritm.get(mtom.request_item.sys_id)){
+				var vars = new x_thjuh_lms.utils().ritmVariables(current);
+				for(var key in vars){
+					ritm.variables[key] = vars[key].toString();
+				}
+				ritm.update();
+				current.requested_item = ritm.sys_id;
+				current.update();
+			}
+		}
+	} catch(ex){
+		gs.error(logErrorMsg + ex);
+	}
+}
+
+]]></script>
+        <synchronous>false</synchronous>
+        <sys_class_name>sysevent_script_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-17 06:19:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>db637984db596300d61452b0cf9619fe</sys_id>
+        <sys_mod_count>33</sys_mod_count>
+        <sys_name>Populate variable on LMS RITM</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
+        <sys_update_name>sysevent_script_action_db637984db596300d61452b0cf9619fe</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-17 18:20:40</sys_updated_on>
+    </sysevent_script_action>
+</record_update>

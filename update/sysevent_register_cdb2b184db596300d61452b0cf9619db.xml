@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_register">
+    <sysevent_register action="INSERT_OR_UPDATE">
+        <description>Triggers script action to to populate LMS RITM variables. evnt.parm1 = request sys_id</description>
+        <event_name>x_thjuh_lms.populate.vars.on.lms.ritm</event_name>
+        <fired_by>requestBroker function in "LMS: Transform Learning Assignments to Requests" scheduled job</fired_by>
+        <queue/>
+        <suffix>populate.vars.on.lms.ritm</suffix>
+        <sys_class_name>sysevent_register</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-17 06:18:43</sys_created_on>
+        <sys_id>cdb2b184db596300d61452b0cf9619db</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>x_thjuh_lms.populate.vars.on.lms.ritm</sys_name>
+        <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
+        <sys_update_name>sysevent_register_cdb2b184db596300d61452b0cf9619db</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-17 08:50:31</sys_updated_on>
+        <table>x_thjuh_lms_learning_assignment</table>
+    </sysevent_register>
+</record_update>

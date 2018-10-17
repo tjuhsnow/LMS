@@ -12,55 +12,116 @@
         <run_start>2018-10-16 06:49:16</run_start>
         <run_time>1970-01-01 05:00:00</run_time>
         <run_type>on_demand</run_type>
-        <script><![CDATA[var itemSysId = gs.getProperty("x_thjuh_lms.catalog.item.sys_id");
+        <script><![CDATA[var errorLogMsg = "LMS: Scheduled job 'LMS: Transform Learning Assignments to Requests' error; message: ";
+var itemSysId = gs.getProperty("x_thjuh_lms.catalog.item.sys_id");
 //var query = "completion_dateISNOTEMPTY^sys_created_onONToday@javascript:gs.beginningOfToday()@javascript:gs.endOfToday()^requestISEMPTY";
 var query = "";
-var gr = new GlideAggregate("x_thjuh_lms_learning_assignment");
-gr.addEncodedQuery(query);
-gr.addAggregate('COUNT', 'student');
-gr.groupBy('student');
-gr.query();
-while(gr.next()){
-	gs.info("Processing completed learning items for " + gr.student.sys_id);
-	var items = [];
-	var course = new GlideRecord("x_thjuh_lms_learning_assignment");
-	course.addEncodedQuery(query);
-	course.addQuery("student", gr.student.sys_id);
-	course.query();
-	while(course.next()){
-		var vars = {};
-		vars.learning_assignment_ref = course.getUniqueValue();
-		vars.item = course.item.sys_id.toString();
-		vars.completion_date = course.completion_date.getDisplayValue();
-		vars.status = course.getValue('status');
-		if(course.student.type != 'internal'){
-			vars.employee_type = "external_pending";
-			vars.lms_id = course.student.id.toString();
-			vars.first_name = course.student.first_name.toString();
-			vars.last_name = course.student.last_name.toString();
-			vars.middle_initial = course.student.middle_name.toString();
+
+processLearningAssignments();
+
+function processLearningAssignments(){
+	try{
+		var broker;
+		var ga = new GlideAggregate("x_thjuh_lms_learning_assignment");
+		ga.addEncodedQuery(query);
+		ga.addAggregate('COUNT', 'student');
+		ga.groupBy('student');
+		ga.query();
+		while(ga.next()){
+			//If student has valid user account, create/update requests with requested_for as student.user
+			if(!gs.nil(ga.student.user)){ 
+				broker = requestBroker(ga.student.user.sys_id.toString(), ga.student.id.toString()); 
+			}
+			//If student has no valid user account, create/update requests with requested_for as service account
+			else{
+				broker = requestBroker(gs.getProperty("x_thjuh_lms.service.account.sys_id"), ga.student.id.toString()); 
+			}
+		}
+	} 
+	catch(ex){
+		gs.error(errorLogMsg + ex + "at line " + ex.lineNumber);
+	}
+}
+
+function requestBroker(reqFor, studentID){
+	try{
+		var utils = new x_thjuh_lms.utils();
+		var request = {};
+		var openRequest = checkForOpenRequest(reqFor, studentID); //Check for open LMS requests
+		if(gs.nil(openRequest)){
+			var newReq = utils.submitNewRequest(getItemsArrayForNewRequest(studentID), reqFor, request, studentID); //Create new request
 		}
 		else{
-			vars.employee_type = 'internal';
-			vars.employee = course.student.user.getUniqueValue();
+			var gr = new GlideRecord("x_thjuh_lms_learning_assignment");
+			gr.addEncodedQuery(query);
+			gr.addQuery("student.id", studentID);
+			gr.query();
+			while(gr.next()){
+				gr.request = openRequest;
+				gr.update();
+				var gdt = new GlideDateTime();
+				gdt.addSeconds(60);
+				utils.addRitmToReq(openRequest, gs.getProperty("x_thjuh_lms.catalog.item.sys_id"), 1);
+				gs.eventQueueScheduled("x_thjuh_lms.populate.vars.on.lms.ritm", gr, openRequest, gs.getUserID(), gdt);
+			}
 		}
-		items.push({sysparm_id: itemSysId, sysparm_quantity: 1, variables: vars});
+	} 
+	catch(ex){
+		gs.error(errorLogMsg + ex + "at line " + ex.lineNumber);
 	}
+}
 
-	gs.info("Sree - " + gr.student.getDisplayValue() + ": \n" + JSON.stringify(items, null, 2));
+function checkForOpenRequest(reqFor, studentID){
+	try{
+		var sd = gs.getProperty("x_thjuh_lms.request.short.description") + " - " + studentID;
+		var query = "active=true^requested_for.sys_id=" + reqFor + "^special_instructionsLIKE" + sd.toString() + "^ORDERBYDESCopened_at";
+		var req = new GlideRecord('sc_request');
+		req.addEncodedQuery(query);
+		req.setLimit(1);
+		req.query();
+		if(req.next()){
+			return req.sys_id.toString();
+		}
+		return null;
+	} 
+	catch(ex){
+		gs.error(errorLogMsg + ex + "at line " + ex.lineNumber);
+	}
+}
+
+function getItemsArrayForNewRequest(studentID){
+	try{
+		var items = [];
+		var la = new GlideRecord("x_thjuh_lms_learning_assignment");
+		la.addEncodedQuery(query);
+		la.addQuery("student.id", studentID);
+		la.query();
+		while(la.next()){
+			var item = {};
+			item.variables = new x_thjuh_lms.utils().ritmVariables(la);
+			item.sysparm_id = gs.getProperty("x_thjuh_lms.catalog.item.sys_id");
+			item.sysparm_quantity = 1;
+			items.push(item);
+		}
+		
+		return items;
+	} 
+	catch(ex){
+		gs.error(errorLogMsg + ex + "at line " + ex.lineNumber);
+	}
 }]]></script>
         <sys_class_name>sysauto_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-16 06:50:00</sys_created_on>
         <sys_id>edc0b4b3db0d2300d61452b0cf9619b3</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>177</sys_mod_count>
         <sys_name>LMS: Transform Learning Assignments to Requests</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sysauto_script_edc0b4b3db0d2300d61452b0cf9619b3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-16 14:18:36</sys_updated_on>
+        <sys_updated_on>2018-10-17 18:13:34</sys_updated_on>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
 </record_update>
