@@ -82,28 +82,6 @@ utils.prototype = {
 		}
 	},
 
-	/* 
-		Create record on snc_trigger table via REST post. CREATE availbale in global scope. 
-		Use to execute scripts in global scope.
-	*/
-	sncTrigger: function(script, name, type, delay){
-		try{
-			name = name || "Triggered by LMS application";
-			type = type || "0";
-			delay = parseInt(delay) || 0;
-			var nextAction = this.delayedDateTime(this.NOW, delay);
-			var endPoint = 'https://' + gs.getProperty('instance_name') + '.service-now.com/api/now/table/sys_trigger';
-			var body = {name: name, script: script, trigger_type: type, "next_action": nextAction};
-			var request = this._executeSNRest(endPoint, 'post', JSON.stringify(body));
-			var response = request.execute();
-
-			return response.getBody();
-		} 
-		catch(ex){
-			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
-		}
-	},
-
 	/*
 		Loads importset table on datasource and runs transform maps (comma separated transformap ids)
 		Sample: var helper= new x_thjuh_lms.utils(); helper.loadImportSet(dataSourceSys,"transMapSys1, transMapSys2,.."); 
@@ -124,24 +102,47 @@ utils.prototype = {
 			this.sncTrigger(script, name, 0, 30);
 			gs.info("LMS Utils: success triggering loadImportSet function from script include. \n dataSourceID: " + dataSourceID + "; \n transformMapIDs: " + transformMapIDs);
 
-			this._runRequestJob(); //"Run scheduled job to transform learning assignments to requests
+			//"Run scheduled job to transform learning assignments to requests
+			gs.info("LMS Utils: executing scheduled job 'LMS: Transform Learning Assignments to Requests'");
+			this.sncTrigger(this.scheduleJobWithDelay(this.jobId), "LMS: Transform Learning Assignments to Requests", 0, 90);
 		} 
 		catch(ex){
 			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
 		}
 	},
 
-	_runRequestJob: function(){
+	scheduleJobWithDelay: function(JOB){
 		try{
-			gs.info("LMS Utils: executing scheduled job 'LMS: Transform Learning Assignments to Requests'");
-
-			var name = "LMS: Transform Learning Assignments to Requests";
 			var script = 'var rec = new GlideRecord("sysauto_script");';
-			script += 'rec.get("' + this.jobId + '");';
+			script += 'rec.get("' + JOB + '");';
 			script += 'if (typeof SncTriggerSynchronizer != "undefined") SncTriggerSynchronizer.executeNow(rec);';
 			script += 'else Packages.com.snc.automation.TriggerSynchronizer.executeNow(rec);';
-			return this.sncTrigger(script, name, 0, 60);
+			return script;
 		}
+		catch(ex){
+			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
+		}
+	},
+	
+	/* 
+		Create record on snc_trigger table via REST post. CREATE availbale in global scope. 
+		Use to execute scripts in global scope.
+	*/
+	sncTrigger: function(script, name, type, delay){
+		try{
+			var gdt = new GlideDateTime();
+			name = name || "Triggered by LMS application";
+			type = type || "0";
+			delay = parseInt(delay) || 0;
+			var nextAction = this.delayedDateTime(gdt, delay);
+			gs.info("Prakash Chowdary: Next Action Time: " + nextAction);
+			var endPoint = 'https://' + gs.getProperty('instance_name') + '.service-now.com/api/now/table/sys_trigger';
+			var body = {name: name, script: script, trigger_type: type, "next_action": nextAction};
+			var request = this._executeSNRest(endPoint, 'post', JSON.stringify(body));
+			var response = request.execute();
+
+			return response.getBody();
+		} 
 		catch(ex){
 			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
 		}
@@ -221,13 +222,13 @@ utils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-12 02:25:10</sys_created_on>
         <sys_id>edebc352db816300d61452b0cf961940</sys_id>
-        <sys_mod_count>164</sys_mod_count>
+        <sys_mod_count>171</sys_mod_count>
         <sys_name>utils</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sys_script_include_edebc352db816300d61452b0cf961940</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-18 04:44:38</sys_updated_on>
+        <sys_updated_on>2018-10-18 06:23:46</sys_updated_on>
     </sys_script_include>
 </record_update>

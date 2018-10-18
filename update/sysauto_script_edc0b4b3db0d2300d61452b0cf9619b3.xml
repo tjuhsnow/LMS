@@ -4,7 +4,7 @@
         <condition/>
         <conditional>false</conditional>
         <name>LMS: Transform Learning Assignments to Requests</name>
-        <run_as display_value="Prakash Parvataneni">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as/>
         <run_as_tz/>
         <run_dayofmonth>1</run_dayofmonth>
         <run_dayofweek>1</run_dayofweek>
@@ -115,14 +115,14 @@ function getItemsArrayForNewRequest(studentID){
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-16 06:50:00</sys_created_on>
         <sys_id>edc0b4b3db0d2300d61452b0cf9619b3</sys_id>
-        <sys_mod_count>179</sys_mod_count>
+        <sys_mod_count>181</sys_mod_count>
         <sys_name>LMS: Transform Learning Assignments to Requests</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sysauto_script_edc0b4b3db0d2300d61452b0cf9619b3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-18 03:07:53</sys_updated_on>
+        <sys_updated_on>2018-10-18 06:08:32</sys_updated_on>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
 </record_update>
