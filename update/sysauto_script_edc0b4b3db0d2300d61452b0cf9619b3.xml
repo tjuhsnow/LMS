@@ -12,7 +12,8 @@
         <run_start>2018-10-16 06:49:16</run_start>
         <run_time>1970-01-01 05:00:00</run_time>
         <run_type>on_demand</run_type>
-        <script><![CDATA[var errorLogMsg = "LMS: Scheduled job 'LMS: Transform Learning Assignments to Requests' error; message: ";
+        <script><![CDATA[gs.info("LMS: Starting scheduled job to create requests");
+var errorLogMsg = "LMS: Scheduled job 'LMS: Transform Learning Assignments to Requests' error; message: ";
 var itemSysId = gs.getProperty("x_thjuh_lms.catalog.item.sys_id");
 //var query = "completion_dateISNOTEMPTY^sys_created_onONToday@javascript:gs.beginningOfToday()@javascript:gs.endOfToday()^requestISEMPTY";
 var query = "";
@@ -29,7 +30,7 @@ function processLearningAssignments(){
 		ga.query();
 		while(ga.next()){
 			//If student has valid user account, create/update requests with requested_for as student.user
-			if(!gs.nil(ga.student.user)){ 
+			if(ga.student.user.getDisplayValue()){ 
 				broker = requestBroker(ga.student.user.sys_id.toString(), ga.student.id.toString()); 
 			}
 			//If student has no valid user account, create/update requests with requested_for as service account
@@ -114,14 +115,14 @@ function getItemsArrayForNewRequest(studentID){
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-16 06:50:00</sys_created_on>
         <sys_id>edc0b4b3db0d2300d61452b0cf9619b3</sys_id>
-        <sys_mod_count>177</sys_mod_count>
+        <sys_mod_count>179</sys_mod_count>
         <sys_name>LMS: Transform Learning Assignments to Requests</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sysauto_script_edc0b4b3db0d2300d61452b0cf9619b3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-17 18:13:34</sys_updated_on>
+        <sys_updated_on>2018-10-18 03:07:53</sys_updated_on>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
 </record_update>
