@@ -7,8 +7,8 @@
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#9;&#13;&#10;&#9;return current.first_name + &quot; &quot; + current.middle_name + &quot; &quot; + current.last_name;&#13;&#10;&#13;&#10;})(current);" label="Name" max_length="40" name="name" type="string" virtual="true"/>
         <element choice="1" default="internal" label="Type" max_length="40" name="type" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Internal - Has SN Account" sequence="100" value="internal"/>
-                <element inactive_on_update="false" label="External - No SN Account" sequence="200" value="external"/>
+                <element inactive_on_update="false" label="Internal - Has NOW Account" sequence="100" value="internal"/>
+                <element inactive_on_update="false" label="External - No NOW Account" sequence="200" value="external"/>
                 <element inactive_on_update="false" label="Pending - Waiting for User Sync" sequence="300" value="pending"/>
             </choice>
         </element>

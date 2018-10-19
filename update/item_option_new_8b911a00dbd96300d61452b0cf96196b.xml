@@ -7,7 +7,7 @@
         <choice_direction>down</choice_direction>
         <choice_field/>
         <choice_table/>
-        <create_roles/>
+        <create_roles>admin</create_roles>
         <default_html_value/>
         <default_value/>
         <delete_roles/>
@@ -37,10 +37,10 @@
         <mask_use_confirmation>false</mask_use_confirmation>
         <mask_use_encryption>false</mask_use_encryption>
         <name>item</name>
-        <order/>
+        <order>700</order>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
-        <question_text>Course</question_text>
+        <question_text>Learning Item</question_text>
         <read_roles/>
         <rec_lookup_price/>
         <rec_price_if_checked>0</rec_price_if_checked>
@@ -59,14 +59,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-17 08:31:31</sys_created_on>
         <sys_id>8b911a00dbd96300d61452b0cf96196b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Course</sys_name>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Learning Item</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>item_option_new_8b911a00dbd96300d61452b0cf96196b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-17 08:31:31</sys_updated_on>
+        <sys_updated_on>2018-10-19 04:15:51</sys_updated_on>
         <table/>
         <tooltip/>
         <type>8</type>
@@ -81,7 +81,7 @@
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>
         <visible_summary>true</visible_summary>
-        <write_roles/>
+        <write_roles>admin</write_roles>
     </item_option_new>
     <sys_translated_text action="delete_multiple" query="documentkey=8b911a00dbd96300d61452b0cf96196b"/>
     <fx_price action="delete_multiple" query="id=8b911a00dbd96300d61452b0cf96196b"/>

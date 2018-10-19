@@ -2,37 +2,36 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>public</access>
         <active>true</active>
-        <api_name>x_thjuh_lms.utils</api_name>
+        <api_name>x_thjuh_lms.utilsLegacy</api_name>
         <client_callable>false</client_callable>
-        <description/>
-        <name>utils</name>
-        <script><![CDATA[var utils = Class.create();
-utils.prototype = {
+        <description>Last update on 10/19/18 2:00am</description>
+        <name>utilsLegacy</name>
+        <script><![CDATA[var utilsLegacy = Class.create();
+utilsLegacy.prototype = {
 	initialize: function() {
 		this.serviceID = gs.getProperty("x_thjuh_lms.service.account.id");
 		this.servicePW = gs.getProperty("x_thjuh_lms.service.account.pw");
 		this.cart = new sn_sc.CartJS();
 		this.NOW = new GlideDateTime();
 		this.jobId = gs.getProperty("x_thjuh_lms.assignments.to.requests.job.id"); /* sys_id of sysauto_script to create requests from learning assignments */
-		this.errorLogMsg = "LMS: error from x_thjuh_lms.utils; message: ";
+		this.errorLogMsg = "LMS: error from x_thjuh_lms.utilsLegacy; message: ";
 	},
 
 	/* Populate variables needed for RITM. Learning assignment is to be passed as an argument and returns varaibles object*/
 	ritmVariables: function(la){
 		try{
 			var vars = {};
-			vars.learning_assignment_ref = la.sys_id.toString();
-			vars.item = la.item.sys_id.toString();
-			vars.completion_date = la.completion_date.getDisplayValue();
-			vars.status = la.status.toString();
-			vars.lms_id = la.student.id.toString();
-			vars.first_name = la.student.first_name.toString();
-			vars.last_name = la.student.last_name.toString();
-			vars.middle_initial = la.student.middle_name.toString();
-			vars.employee_type = la.student.type.toString();
-			vars.lms_student_ref = la.student.sys_id.toString();
+			vars.student_type = la.student.type.toString();
 			vars.employee = la.student.user.sys_id.toString();
-
+			vars.student_ref = la.student.sys_id.toString();
+			vars.first_name = la.student.first_name.toString();
+			vars.middle_name = la.student.middle_name.toString();
+			vars.last_name = la.student.last_name.toString();
+			vars.item = la.item.sys_id.toString();
+			vars.assignment_ref = la.sys_id.toString();
+			vars.completion_status = la.status.toString();
+			vars.completion_date = la.completion_date.getDisplayValue();
+			
 			return vars;
 		} 
 		catch(ex){
@@ -84,7 +83,7 @@ utils.prototype = {
 
 	/*
 		Loads importset table on datasource and runs transform maps (comma separated transformap ids)
-		Sample: var helper= new x_thjuh_lms.utils(); helper.loadImportSet(dataSourceSys,"transMapSys1, transMapSys2,.."); 
+		Sample: var helper= new x_thjuh_lms.utilsLegacy(); helper.loadImportSet(dataSourceSys,"transMapSys1, transMapSys2,.."); 
 	 */
 	loadImportSet: function(dataSourceID, transformMapIDs) {
 		try{
@@ -135,7 +134,6 @@ utils.prototype = {
 			type = type || "0";
 			delay = parseInt(delay) || 0;
 			var nextAction = this.delayedDateTime(gdt, delay);
-			gs.info("Prakash Chowdary: Next Action Time: " + nextAction);
 			var endPoint = 'https://' + gs.getProperty('instance_name') + '.service-now.com/api/now/table/sys_trigger';
 			var body = {name: name, script: script, trigger_type: type, "next_action": nextAction};
 			var request = this._executeSNRest(endPoint, 'post', JSON.stringify(body));
@@ -166,7 +164,7 @@ utils.prototype = {
 		try{
 			var mtom = new GlideRecord('sc_item_option_mtom');
 			mtom.addQuery('request_item.request.sys_id', req);
-			mtom.addQuery('sc_item_option.item_option_new.name', 'learning_assignment_ref');
+			mtom.addQuery('sc_item_option.item_option_new.name', 'assignment');
 			mtom.addNotNullQuery('sc_item_option.value');
 			mtom.addQuery('request_item.active', true);
 			mtom.query();
@@ -216,19 +214,19 @@ utils.prototype = {
 		}
 	},
 
-	type: 'utils'
+	type: 'utilsLegacy'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-12 02:25:10</sys_created_on>
         <sys_id>edebc352db816300d61452b0cf961940</sys_id>
-        <sys_mod_count>171</sys_mod_count>
-        <sys_name>utils</sys_name>
+        <sys_mod_count>173</sys_mod_count>
+        <sys_name>utilsLegacy</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sys_script_include_edebc352db816300d61452b0cf961940</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-18 06:23:46</sys_updated_on>
+        <sys_updated_on>2018-10-19 06:12:03</sys_updated_on>
     </sys_script_include>
 </record_update>

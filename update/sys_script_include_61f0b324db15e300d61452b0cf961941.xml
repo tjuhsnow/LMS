@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_thjuh_lms.utils</api_name>
+        <client_callable>false</client_callable>
+        <description>V2 of original utils script include containing server-side helper functions</description>
+        <name>utils</name>
+        <script><![CDATA[var utils = Class.create();
+utils.prototype = {
+	initialize: function() {
+		this.serviceID = gs.getProperty("x_thjuh_lms.service.account.id");
+		this.servicePW = gs.getProperty("x_thjuh_lms.service.account.pw");
+		this.serviceSys = gs.getProperty("x_thjuh_lms.service.account.sys_id");
+		this.cat_item = gs.getProperty("x_thjuh_lms.catalog.item.sys_id"); /*sys_id of LMS request catalog items */
+		this.instructions = gs.getProperty("x_thjuh_lms.request.special_instructions");
+		this.jobId = gs.getProperty("x_thjuh_lms.assignments.to.requests.job.id"); /* sys_id of sysauto_script to create requests from learning assignments */
+		
+		this.cart = new sn_sc.CartJS();
+		this.errorLogMsg = "LMS: error from x_thjuh_lms.utils; message: ";
+		this.laRequestQuery = "type=item^completion_dateISNOTEMPTY^requested_item.numberISEMPTY";
+	},
+
+	laReqBroker: function(reqFor /*User sys_id*/, laGR /*learining assignment GR*/){
+		try{
+			var request = {}, newItem = {}, newReq = {};
+			var studentID = laGR.student.id.toString();
+			var openRequest = this.checkOpenLaRequest(reqFor, studentID); //Check for open LMS requests
+			if(gs.nil(openRequest)){
+				newItem.variables = this.ritmVariables(laGR);
+				newItem.sysparm_id = this.cat_item;
+				newItem.sysparm_quantity = 1;
+				gs.info("LMS Utils: laRequestBroker - Submitting new request for " + laGR.getDisplayValue());
+				newReq =  this.submitNewRequest([newItem], reqFor, request, studentID); //Create new request
+
+				return newReq;
+			}
+			else{
+				if(gs.nil(laGR.request)){
+					laGR.request = openRequest;
+					laGR.update();
+				}
+				var gdt = new GlideDateTime();
+				gdt.addSeconds(60);
+				gs.eventQueueScheduled("x_thjuh_lms.populate.vars.on.lms.ritm", laGR, openRequest, gs.getUserID(), gdt);
+				gs.info("LMS Utils: laRequestBroker - adding ritm to request " + openRequest + " for " + laGR.getDisplayValue());
+
+				return this.addRitmToReq(openRequest, this.cat_item, 1);
+			}
+		} 
+		catch(ex){
+			gs.error(this.errorLogMsg + ex + "at line " + ex.lineNumber);
+		}
+	},
+
+	checkOpenLaRequest: function(reqFor /*user sys_id*/, studentID /*student id*/){
+		try{
+			var sd = this.instructions + " - " + studentID;
+			var query = "active=true^requested_for.sys_id=" + reqFor + "^special_instructionsLIKE" + sd.toString() + "^ORDERBYDESCopened_at";
+			var req = new GlideRecord('sc_request');
+			req.addEncodedQuery(query);
+			req.setLimit(1);
+			req.query();
+			if(req.next()){
+				return req.sys_id.toString();
+			}
+			return null;
+		} 
+		catch(ex){
+			gs.error(this.errorLogMsg + ex + "at line " + ex.lineNumber);
+		}
+	},
+
+	/* Populate variables needed for RITM. Learning assignment is to be passed as an argument and returns varaibles object*/
+	ritmVariables: function(la /*Learning Assignment GR*/){
+		try{
+			return {
+					"student_type": la.student.type.toString(),
+					"employee": la.student.user.sys_id.toString(),
+					"student_ref": la.student.sys_id.toString(),
+					"first_name": la.student.first_name.toString(),
+					"middle_name": la.student.middle_name.toString(),
+					"last_name": la.student.last_name.toString(),
+					"item": la.item.sys_id.toString(),
+					"assignment_ref": la.sys_id.toString(),
+					"completion_status": la.status.toString(),
+					"completion_date": la.completion_date.getDisplayValue()	
+					};
+		} 
+		catch(ex){
+			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
+		}
+	},
+
+	/* 
+		Addes new ritm to existing request. requred parms: request sys_id, item sys_id; optional parms: quantity. 
+		Variables on created new item are to be set ----TO DO---- 
+	*/ 
+	addRitmToReq: function(request /*request sys_id*/, item /*Catalog Item sys_id*/, quantity /*optional*/){
+		try{
+			quantity = quantity || 1;
+			var script = 'var reqHelper = new GlideappCalculationHelper();\n'; 
+			script += 'reqHelper.addItemToExistingRequest("' + request + '", "' + item + '", "' + quantity + '");';
+			gs.info("LMS Utils: Added item with sys_id: " + item + " to existing request: " + request + " with script: " + script);
+
+			return this.sncTrigger(script, "Add ritm to existing request", 0, 0);
+		} 
+		catch(ex){
+			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
+		}
+	},
+
+	/*
+		Submits new request with multiple items defined in items array for reqFor user
+		ex: items = [{ "sysparm_id": "sc_cat_item_sys_id_1", "sysparm_quantity": "1", "variables":{ "var1": "val1", "var2": "val2"} }] 
+	*/				 
+	submitNewRequest: function(items /*array of item objects*/, reqFor /*user sys_id*/, request /*JSON object*/, studentID /*student id(optional)*/){
+		try{
+			request.requested_for = reqFor;
+			request.special_instructions = this.instructions + " - " + studentID;
+			for(var i in items){
+				var quantity = items[i]['sysparm_quantity'].toString() || '1';
+				var item = {'sysparm_id': items[i]['sysparm_id'], 'sysparm_quantity': quantity, 'variables': items[i]['variables']};
+				this._addItemToCart(item);
+			}
+			var newReq = this.cart.submitOrder(request);
+			gs.info("LMS Utils: Submitted new request: " + JSON.stringify(newReq));
+			this._updateLearningAssignmentWithReq(newReq.request_id); //
+
+			return newReq;
+		} 
+		catch(ex){
+			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
+		}
+	},
+
+	/**************** TODO: rework for better query ***************/
+	_updateLearningAssignmentWithReq: function(request /*request sys_id*/){
+		try{
+			var mtom = new GlideRecord('sc_item_option_mtom');
+			mtom.addQuery('request_item.request.sys_id', request);
+			mtom.addQuery('sc_item_option.item_option_new.name', 'assignment_ref');
+			mtom.addNotNullQuery('sc_item_option.value');
+			mtom.addQuery('request_item.active', true);
+			mtom.query();
+			while(mtom.next()){
+				var la = new GlideRecord("x_thjuh_lms_learning_assignment");
+				la.addQuery('sys_id', mtom.sc_item_option.value);
+				la.addEncodedQuery("requestISEMPTY^ORrequested_itemISEMPTY");
+				la.query();
+				if(la.next()){
+					la.request = mtom.request_item.request.sys_id;
+					la.requested_item = mtom.request_item.sys_id;
+					la.update();
+				}
+			}
+		}
+		catch(ex){
+			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
+		}
+	},
+
+	/*
+		Loads importset table on datasource and runs transform maps (comma separated transformap ids)
+		Sample: var helper= new x_thjuh_lms.utils(); helper.loadImportSet(dataSourceSys,"transMapSys1, transMapSys2,.."); 
+	 */
+	loadImportSet: function(dataSourceID, transformMapIDs) {
+		try{
+			var name = "Load Import Set: " + dataSourceID;
+			var script = 'var dataSource = new GlideRecord("sys_data_source");'
+			+ 'dataSource.get("' + dataSourceID + '");'
+			+ 'var loader = new GlideImportSetLoader();'
+			+ 'var importSetRec = loader.getImportSetGr(dataSource);'
+			+ 'var ranload = loader.loadImportSetTable(importSetRec, dataSource);'
+			+ 'importSetRec.state = "loaded";'
+			+ 'importSetRec.update();'
+			+ 'var transformWorker = new GlideImportSetTransformerWorker(importSetRec.sys_id, "' + transformMapIDs + '");'
+			+ 'transformWorker.setBackground(true);'
+			+ 'transformWorker.start();';
+			this.sncTrigger(script, name, 0, 30);
+			gs.info("LMS Utils: success triggering loadImportSet function from script include. \n dataSourceID: " + dataSourceID + "; \n transformMapIDs: " + transformMapIDs);
+
+		} 
+		catch(ex){
+			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
+		}
+	},
+
+	/* 
+		Create record on snc_trigger table via REST post. CREATE availbale in global scope. 
+		Use to execute scripts in global scope.
+	*/
+	sncTrigger: function(script, name, type, delay){
+		try{
+			var gdt = new GlideDateTime();
+			name = name || "Triggered by LMS application";
+			type = type || "0";
+			delay = parseInt(delay) || 0;
+			var nextAction = this.delayedDateTime(gdt, delay);
+			var endPoint = 'https://' + gs.getProperty('instance_name') + '.service-now.com/api/now/table/sys_trigger';
+			var body = {name: name, script: script, trigger_type: type, "next_action": nextAction};
+			var request = this._executeSNRest(endPoint, 'post', JSON.stringify(body));
+			var response = request.execute();
+
+			return response.getBody();
+		} 
+		catch(ex){
+			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
+		}
+	},
+
+	/* Add delay in seconds to glide datetime obj and return displayvalue in local time */
+	delayedDateTime: function(gdt /*GlideDateTime Object*/, sec /*Seconds to add*/){
+		try{
+			sec = parseInt(sec) || 0;
+			gdt.addSeconds(sec);
+			gdt.add(-gdt.getTZOffset());
+
+			return gdt.getDisplayValue();
+		} 
+		catch(ex){
+			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
+		}
+	},
+
+	/*  Execute rest message and return response  */	
+	_executeSNRest: function(url /*end point*/, method, body/*JSON Object*/){
+		try{
+			var request = new sn_ws.RESTMessageV2();
+			request.setEndpoint(url);
+			request.setHttpMethod(method);
+			request.setBasicAuth(this.serviceID, this.servicePW);
+			request.setRequestHeader("Accept","application/json");
+			request.setRequestHeader('Content-Type','application/json');
+			request.setRequestBody(body);
+
+			return request;
+		} 
+		catch(ex){
+			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
+		}
+	},
+
+	/*  Add item to cart  */ 
+	_addItemToCart: function(item /*catalog item sys_id*/){
+		try{
+			var cart = new sn_sc.CartJS();
+			cart.addToCart(item);
+		} 
+		catch(ex){
+			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
+		}
+	},
+
+	type: 'utils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-19 05:13:54</sys_created_on>
+        <sys_id>61f0b324db15e300d61452b0cf961941</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>utils</sys_name>
+        <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
+        <sys_update_name>sys_script_include_61f0b324db15e300d61452b0cf961941</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-19 06:47:45</sys_updated_on>
+    </sys_script_include>
+</record_update>

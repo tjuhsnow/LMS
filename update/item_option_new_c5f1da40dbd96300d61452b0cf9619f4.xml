@@ -5,9 +5,9 @@
         <cat_item display_value="LMS: Training Request &amp; Access">52bbf812db492300d61452b0cf96198a</cat_item>
         <category/>
         <choice_direction>down</choice_direction>
-        <choice_field/>
-        <choice_table/>
-        <create_roles/>
+        <choice_field>status</choice_field>
+        <choice_table>x_thjuh_lms_learning_assignment</choice_table>
+        <create_roles>admin</create_roles>
         <default_html_value/>
         <default_value/>
         <delete_roles/>
@@ -22,7 +22,7 @@
         <global>false</global>
         <help_tag>More information</help_tag>
         <help_text/>
-        <include_none>false</include_none>
+        <include_none>true</include_none>
         <instructions/>
         <layout>normal</layout>
         <list_table/>
@@ -36,11 +36,11 @@
         <map_to_field>false</map_to_field>
         <mask_use_confirmation>false</mask_use_confirmation>
         <mask_use_encryption>false</mask_use_encryption>
-        <name>status</name>
-        <order/>
+        <name>completion_status</name>
+        <order>900</order>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
-        <question_text>Status</question_text>
+        <question_text>Completion Status</question_text>
         <read_roles/>
         <rec_lookup_price/>
         <rec_price_if_checked>0</rec_price_if_checked>
@@ -59,17 +59,17 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-17 08:32:50</sys_created_on>
         <sys_id>c5f1da40dbd96300d61452b0cf9619f4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Status</sys_name>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>completion_status</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>item_option_new_c5f1da40dbd96300d61452b0cf9619f4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-17 08:32:50</sys_updated_on>
+        <sys_updated_on>2018-10-19 04:30:29</sys_updated_on>
         <table/>
         <tooltip/>
-        <type>6</type>
+        <type>5</type>
         <ui_page/>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
@@ -81,7 +81,7 @@
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>
         <visible_summary>true</visible_summary>
-        <write_roles/>
+        <write_roles>admin</write_roles>
     </item_option_new>
     <sys_translated_text action="delete_multiple" query="documentkey=c5f1da40dbd96300d61452b0cf9619f4"/>
     <fx_price action="delete_multiple" query="id=c5f1da40dbd96300d61452b0cf9619f4"/>
