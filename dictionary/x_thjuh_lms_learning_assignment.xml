@@ -8,6 +8,7 @@
         <element label="Expiration Date" max_length="40" name="expiration_date" type="glide_date_time"/>
         <element label="Item" max_length="32" name="item" reference="x_thjuh_lms_item" type="reference"/>
         <element label="Next Action Date" max_length="40" name="next_action_date" type="glide_date_time"/>
+        <element label="Processed" max_length="40" name="processed" type="boolean"/>
         <element label="Program" max_length="32" name="program" reference="x_thjuh_lms_program" type="reference"/>
         <element label="Request" max_length="32" name="request" reference="sc_request" type="reference"/>
         <element label="Requested Item" max_length="32" name="requested_item" reference="sc_req_item" type="reference"/>

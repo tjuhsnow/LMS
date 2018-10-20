@@ -6,7 +6,7 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>true</action_update>
-        <active>true</active>
+        <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -15,11 +15,9 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_thjuh_lms_learning_assignment">type=item^completion_dateISNOTEMPTY^ORstatus=Instructor-led Class Completed^ORstatus_id=Classroom-Complete^requested_itemISEMPTY^EQ<item endquery="false" field="type" goto="false" newquery="false" operator="=" or="false" value="item"/>
+        <filter_condition table="x_thjuh_lms_learning_assignment">type=item^completion_dateISNOTEMPTY^processed=false^EQ<item endquery="false" field="type" goto="false" newquery="false" operator="=" or="false" value="item"/>
             <item endquery="false" field="completion_date" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
-            <item endquery="false" field="status" goto="false" newquery="false" operator="=" or="true" value="Instructor-led Class Completed"/>
-            <item endquery="false" field="status_id" goto="false" newquery="false" operator="=" or="true" value="Classroom-Complete"/>
-            <item endquery="false" field="requested_item" goto="false" newquery="false" operator="ISEMPTY" or="false" value=""/>
+            <item endquery="false" field="processed" goto="false" newquery="false" operator="=" or="false" value="false"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
@@ -33,9 +31,16 @@
         <rest_service_text/>
         <rest_variables/>
         <role_conditions/>
-        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-
-	var reqFor = current.student.user.sys_id ?  current.student.user.sys_id : gs.getProperty("x_thjuh_lms.service.account.sys_id");
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {	
+	var reqFor = "";
+	
+	if(!gs.nil(current.student.user))
+		reqFor = current.student.user.sys_id.toString();
+	else
+		reqFor = gs.getProperty("x_thjuh_lms.service.account.sys_id").toString();
+	
+	current.processed = true;
+	current.update();
 	new x_thjuh_lms.utils().laReqBroker(reqFor, current);
 
 })(current, previous);]]></script>
@@ -45,7 +50,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b7fa0c74db55e300d61452b0cf9619d7</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>Create RITMs for Completed Items</sys_name>
         <sys_overrides/>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
@@ -53,9 +58,9 @@
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sys_script_b7fa0c74db55e300d61452b0cf9619d7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-19 06:49:31</sys_updated_on>
+        <sys_updated_on>2018-10-19 09:30:31</sys_updated_on>
         <template/>
-        <when>after</when>
+        <when>async</when>
     </sys_script>
     <sys_translated_text action="delete_multiple" query="documentkey=b7fa0c74db55e300d61452b0cf9619d7"/>
 </record_update>

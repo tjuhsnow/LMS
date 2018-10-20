@@ -19,7 +19,7 @@
         <dynamic_ref_qual/>
         <example_text/>
         <field/>
-        <global>false</global>
+        <global>true</global>
         <help_tag>More information</help_tag>
         <help_text/>
         <include_none>false</include_none>
@@ -61,14 +61,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-17 08:37:50</sys_created_on>
         <sys_id>68139a80dbd96300d61452b0cf961959</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>Employee/User</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy/>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>item_option_new_68139a80dbd96300d61452b0cf961959</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-19 03:15:41</sys_updated_on>
+        <sys_updated_on>2018-10-20 06:21:36</sys_updated_on>
         <table/>
         <tooltip/>
         <type>8</type>
