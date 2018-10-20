@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><database>
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
     <element label="Student" max_length="40" name="x_thjuh_lms_student" type="collection">
         <element label="First Name" max_length="40" name="first_name" type="string"/>
         <element display="true" label="ID" max_length="40" name="id" type="string"/>
         <element label="Last Name" max_length="40" name="last_name" type="string"/>
         <element label="Middle Name" max_length="40" name="middle_name" type="string"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#9;&#13;&#10;&#9;return current.first_name + &quot; &quot; + current.middle_name + &quot; &quot; + current.last_name;&#13;&#10;&#13;&#10;})(current);" label="Name" max_length="40" name="name" type="string" virtual="true"/>
+        <element calculation="(function calculatedFieldValue(current) {&#10;&#9;&#10;&#9;return current.first_name + &quot; &quot; + current.middle_name + &quot; &quot; + current.last_name;&#10;&#10;})(current);" label="Name" max_length="40" name="name" type="string" virtual="true"/>
         <element choice="1" default="internal" label="Type" max_length="40" name="type" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Internal - Has NOW Account" sequence="100" value="internal"/>
-                <element inactive_on_update="false" label="External - No NOW Account" sequence="200" value="external"/>
-                <element inactive_on_update="false" label="Pending - Waiting for User Sync" sequence="300" value="pending"/>
+                <element label="Internal - Has NOW Account" sequence="100" value="internal"/>
+                <element label="External - No NOW Account" sequence="200" value="external"/>
+                <element label="Pending - Waiting for User Sync" sequence="300" value="pending"/>
             </choice>
         </element>
         <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>

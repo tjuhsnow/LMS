@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_properties">
     <sys_properties action="INSERT_OR_UPDATE">
         <choices/>
-        <description>sys_id of service account</description>
+        <description>Service account SYS ID</description>
         <ignore_cache>false</ignore_cache>
         <is_private>false</is_private>
         <name>x_thjuh_lms.service.account.sys_id</name>
@@ -10,15 +11,17 @@
         <sys_class_name>sys_properties</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-16 03:24:44</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>25c148ffdb492300d61452b0cf96198b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>x_thjuh_lms.service.account.sys_id</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sys_properties_25c148ffdb492300d61452b0cf96198b</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-16 03:24:44</sys_updated_on>
+        <sys_updated_by>PrakashP</sys_updated_by>
+        <sys_updated_on>2018-10-20 07:25:47</sys_updated_on>
         <type>string</type>
         <value>8d64071edb416300d61452b0cf961933</value>
         <write_roles/>

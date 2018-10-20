@@ -1,16 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update>
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
     <sys_dictionary action="INSERT_OR_UPDATE" element="enrollment_date" table="x_thjuh_lms_learning_assignment">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
         <attributes/>
         <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
+        <calculation>(function calculatedFieldValue(current) {
 
 	// Add your code here
 	return '';  // return the calculated value
 
-})(current);]]></calculation>
+})(current);</calculation>
         <choice/>
         <choice_field/>
         <choice_table/>
@@ -53,15 +54,17 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-11 03:32:29</sys_created_on>
-        <sys_id>d5129246db052300d61452b0cf9619d3</sys_id>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>371e1181db99eb406d31892a4896196c</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Enrollment Date</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sys_dictionary_x_thjuh_lms_learning_assignment_enrollment_date</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-11 03:32:29</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-10-20 07:20:00</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
