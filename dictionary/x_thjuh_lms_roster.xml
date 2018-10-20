@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
+<?xml version="1.0" encoding="UTF-8"?><database>
     <element label="Roster" max_length="40" name="x_thjuh_lms_roster" type="collection"/>
 </database>

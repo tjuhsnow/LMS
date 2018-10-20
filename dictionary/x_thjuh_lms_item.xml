@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
+<?xml version="1.0" encoding="UTF-8"?><database>
     <element label="Item" max_length="40" name="x_thjuh_lms_item" type="collection">
         <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
         <element label="Classification ID" max_length="40" name="classification_id" type="string"/>
@@ -10,8 +9,8 @@
         <element label="Notify" max_length="40" name="notify" type="boolean"/>
         <element choice="1" default="moderate" label="Priority Level" max_length="40" name="priority_level" type="choice">
             <choice>
-                <element label="Critical" value="critical"/>
-                <element label="Moderate" value="moderate"/>
+                <element inactive_on_update="false" label="Critical" value="critical"/>
+                <element inactive_on_update="false" label="Moderate" value="moderate"/>
             </choice>
         </element>
         <element label="Revision Date" max_length="40" name="revision_date" type="glide_date_time"/>
@@ -21,7 +20,7 @@
         <element label="Total Count" max_length="40" name="total_count" type="string"/>
         <element choice="1" label="Type" max_length="40" name="type" type="choice">
             <choice>
-                <element label="Classroom" sequence="0" value="Classroom"/>
+                <element inactive_on_update="false" label="Classroom" sequence="0" value="Classroom"/>
             </choice>
         </element>
         <element choice="1" label="Type ID" max_length="40" name="type_id" type="choice">

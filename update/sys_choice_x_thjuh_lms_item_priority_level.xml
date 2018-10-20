@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_choice action="INSERT_OR_UPDATE" field="priority_level" table="x_thjuh_lms_item" version="3">
         <sys_choice action="INSERT_OR_UPDATE">
             <dependent_value/>
@@ -13,6 +12,7 @@
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2018-10-13 04:45:50</sys_created_on>
             <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
             <sys_id>3db7783adb01a300d61452b0cf9619a9</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
@@ -31,6 +31,7 @@
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2018-10-13 04:45:34</sys_created_on>
             <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
             <sys_id>68a7f0fadb01a300d61452b0cf961995</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
@@ -43,13 +44,11 @@
             <sys_class_name>sys_choice_set</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2018-10-13 04:45:34</sys_created_on>
-            <sys_customer_update>false</sys_customer_update>
-            <sys_id>b13e5581db99eb406d31892a48961953</sys_id>
+            <sys_id>7751edc1db152700d61452b0cf961994</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>priority_level</sys_name>
             <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
             <sys_policy/>
-            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
             <sys_update_name>sys_choice_x_thjuh_lms_item_priority_level</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
