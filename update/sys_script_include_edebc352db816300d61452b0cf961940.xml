@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>public</access>
         <active>true</active>
         <api_name>x_thjuh_lms.utils</api_name>
+        <caller_access/>
         <client_callable>false</client_callable>
         <description>Last update on 10/19/18 2:00am</description>
         <name>utils</name>
@@ -32,7 +34,8 @@ utils.prototype = {
 				"item": la.item.sys_id.toString(),
 				"assignment_ref": la.sys_id.toString(),
 				"completion_status": la.status.toString(),
-				"completion_date": la.completion_date.getDisplayValue()	
+				"completion_date": la.completion_date.getDisplayValue(),
+				"access_required": (la.item.requires_access.toString() == "true") ? "Yes" : "No"
 			};
 		} 
 		catch(ex){
@@ -228,14 +231,16 @@ utils.prototype = {
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-12 02:25:10</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>edebc352db816300d61452b0cf961940</sys_id>
-        <sys_mod_count>178</sys_mod_count>
+        <sys_mod_count>180</sys_mod_count>
         <sys_name>utils</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sys_script_include_edebc352db816300d61452b0cf961940</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-20 08:31:03</sys_updated_on>
+        <sys_updated_by>PrakashP</sys_updated_by>
+        <sys_updated_on>2018-10-21 04:47:29</sys_updated_on>
     </sys_script_include>
 </record_update>

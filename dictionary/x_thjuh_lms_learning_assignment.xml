@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><database>
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
     <element audit="true" label="Learning Assignment" max_length="40" name="x_thjuh_lms_learning_assignment" type="collection">
         <element label="Assignment Date" max_length="40" name="assignment_date" type="glide_date_time"/>
         <element label="Completion Date" max_length="40" name="completion_date" type="glide_date_time"/>
@@ -15,20 +16,20 @@
         <element label="Roster" max_length="32" name="roster" reference="x_thjuh_lms_roster" type="reference"/>
         <element choice="1" label="Status" max_length="40" name="status" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Instructor-led Class Completed" sequence="0" value="Instructor-led Class Completed"/>
+                <element label="Instructor-led Class Completed" sequence="0" value="Instructor-led Class Completed"/>
             </choice>
         </element>
         <element choice="1" label="Status ID" max_length="40" name="status_id" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Classroom-Complete" sequence="0" value="Classroom-Complete"/>
+                <element label="Classroom-Complete" sequence="0" value="Classroom-Complete"/>
             </choice>
         </element>
         <element label="Student" max_length="32" name="student" reference="x_thjuh_lms_student" type="reference"/>
         <element choice="1" label="Type" max_length="40" name="type" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Item" sequence="100" value="item"/>
-                <element inactive_on_update="false" label="Program" sequence="200" value="program"/>
-                <element inactive_on_update="false" label="Curriculum" sequence="300" value="curriculum"/>
+                <element label="Item" sequence="100" value="item"/>
+                <element label="Program" sequence="200" value="program"/>
+                <element label="Curriculum" sequence="300" value="curriculum"/>
             </choice>
         </element>
         <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>

@@ -1,15 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_help_role">
     <sys_embedded_help_role action="INSERT_OR_UPDATE">
         <order>1000</order>
         <role display_value="x_thjuh_lms.instructor_user" name="x_thjuh_lms.instructor_user">0fcbf54edbc12300d61452b0cf961932</role>
         <sys_class_name>sys_embedded_help_role</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-11 01:47:39</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>8bcbf54edbc12300d61452b0cf961934</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>0fcbf54edbc12300d61452b0cf961932</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sys_embedded_help_role_8bcbf54edbc12300d61452b0cf961934</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>

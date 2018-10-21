@@ -1,13 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_security_acl_role">
     <sys_security_acl_role action="INSERT_OR_UPDATE">
         <sys_class_name>sys_security_acl_role</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-12 06:13:44</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>16424866db056300d61452b0cf96190d</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_thjuh_lms_offering_occurrence.x_thjuh_lms.offering_occurrence_user</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_security_acl display_value="x_thjuh_lms_offering_occurrence">9a424866db056300d61452b0cf96190a</sys_security_acl>
         <sys_update_name>sys_security_acl_role_16424866db056300d61452b0cf96190d</sys_update_name>

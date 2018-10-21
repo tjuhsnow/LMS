@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_fix">
     <sys_script_fix action="INSERT_OR_UPDATE">
         <active>true</active>
         <before>false</before>
@@ -6,7 +7,6 @@
 </description>
         <flush_cache>false</flush_cache>
         <name>Create inbound action in global scope</name>
-        <record_for_rollback>false</record_for_rollback>
         <run_once>true</run_once>
         <script><![CDATA[var helper = new x_thjuh_lms.utils();
 
@@ -35,11 +35,13 @@ helper.sncTrigger(script, "LMS: create inbound action in global", 0, 30);]]></sc
         <sys_class_name>sys_script_fix</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-16 03:36:38</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>442ef36fdb492300d61452b0cf9619cc</sys_id>
         <sys_mod_count>35</sys_mod_count>
         <sys_name>Create inbound action in global scope</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sys_script_fix_442ef36fdb492300d61452b0cf9619cc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>

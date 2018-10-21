@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update>
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
     <sys_documentation element="request" label="Request" language="en" table="x_thjuh_lms_learning_assignment">
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>request</element>
@@ -11,11 +12,13 @@
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2018-10-16 06:45:39</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
             <sys_id>f0ff2873db0d2300d61452b0cf961959</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>Request</sys_name>
             <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
             <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
             <sys_update_name>sys_documentation_x_thjuh_lms_learning_assignment_request_en</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="item_option_new">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="item_option_new">
     <item_option_new action="INSERT_OR_UPDATE">
         <active>true</active>
         <attributes>ref_auto_completer=AJAXTableCompleter,ref_ac_columns=user_name,ref_ac_order_by=name,ref_ac_columns_search=true</attributes>
@@ -60,11 +61,13 @@
         <sys_class_name>item_option_new</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-17 08:37:50</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>68139a80dbd96300d61452b0cf961959</sys_id>
         <sys_mod_count>14</sys_mod_count>
         <sys_name>Employee/User</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>item_option_new_68139a80dbd96300d61452b0cf961959</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
@@ -84,6 +87,9 @@
         <visible_standalone>true</visible_standalone>
         <visible_summary>true</visible_summary>
         <write_roles>admin</write_roles>
+        <x_yala_yds_additional_display_fields/>
+        <x_yala_yds_additional_display_fields_list/>
+        <x_yala_yds_search_all_display_fields>false</x_yala_yds_search_all_display_fields>
     </item_option_new>
     <sys_translated_text action="delete_multiple" query="documentkey=68139a80dbd96300d61452b0cf961959"/>
     <fx_price action="delete_multiple" query="id=68139a80dbd96300d61452b0cf961959"/>
