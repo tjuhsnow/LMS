@@ -11,11 +11,11 @@
         <element label="Notify" max_length="40" name="notify" type="boolean"/>
         <element choice="1" default="moderate" label="Priority Level" max_length="40" name="priority_level" type="choice">
             <choice>
-                <element label="Critical" value="critical"/>
-                <element label="Moderate" value="moderate"/>
+                <element label="Critical" value="1"/>
+                <element label="Moderate" value="3"/>
             </choice>
         </element>
-        <element label="Requires access" max_length="40" name="requires_access" type="boolean"/>
+        <element default="true" label="Requires access" max_length="40" name="requires_access" type="boolean"/>
         <element label="Revision Date" max_length="40" name="revision_date" type="glide_date_time"/>
         <element label="Revision Number" max_length="40" name="revision_number" type="string"/>
         <element label="Source ID" max_length="40" name="source_id" type="string"/>

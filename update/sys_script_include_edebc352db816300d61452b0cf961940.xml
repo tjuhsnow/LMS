@@ -16,31 +16,8 @@ utils.prototype = {
 		this.serviceSys = gs.getProperty("x_thjuh_lms.service.account.sys_id");
 		this.instructions = gs.getProperty("x_thjuh_lms.request.special_instructions");
 		this.cart = new sn_sc.CartJS();
-		this.NOW = new GlideDateTime();
 		this.jobId = gs.getProperty("x_thjuh_lms.assignments.to.requests.job.id"); /* sys_id of sysauto_script to create requests from learning assignments */
 		this.errorLogMsg = "LMS: error from x_thjuh_lms.utils; message: ";
-	},
-
-	/* Populate variables needed for RITM. Learning assignment is to be passed as an argument and returns varaibles object*/
-	ritmVariables: function(la){
-		try{
-			return {
-				"student_type": la.student.type.toString(),
-				"employee": la.student.user.sys_id.toString(),
-				"student_ref": la.student.sys_id.toString(),
-				"first_name": la.student.first_name.toString(),
-				"middle_name": la.student.middle_name.toString(),
-				"last_name": la.student.last_name.toString(),
-				"item": la.item.sys_id.toString(),
-				"assignment_ref": la.sys_id.toString(),
-				"completion_status": la.status.toString(),
-				"completion_date": la.completion_date.getDisplayValue(),
-				"access_required": (la.item.requires_access.toString() == "true") ? "Yes" : "No"
-			};
-		} 
-		catch(ex){
-			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
-		}
 	},
 
 	/* 
@@ -109,24 +86,27 @@ utils.prototype = {
 			+ 'var transformWorker = new GlideImportSetTransformerWorker(importSetRec.sys_id, "' + transformMapIDs + '");'
 			+ 'transformWorker.setBackground(true);'
 			+ 'transformWorker.start();';
+			
 			this.sncTrigger(script, name, 0, 30);
 			gs.info("LMS Utils: success triggering loadImportSet function from script include. \n dataSourceID: " + dataSourceID + "; \n transformMapIDs: " + transformMapIDs);
 
 			//"Run scheduled job to transform learning assignments to requests
 			gs.info("LMS Utils: executing scheduled job 'LMS: Transform Learning Assignments to Requests'");
 			this.sncTrigger(this.scheduleJobWithDelay(this.jobId), "LMS: Transform Learning Assignments to Requests", 0, 90);
+			
+			return "LMS: Import sets loaded and scheduled job with id - " + this.jobId;
 		} 
 		catch(ex){
 			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
 		}
 	},
 
-	scheduleJobWithDelay: function(JOB){
+	scheduleJobWithDelay: function(/*ScheduledJob sys_id*/ JOB){
 		try{
-			var script = 'var rec = new GlideRecord("sysauto_script");';
-			script += 'rec.get("' + JOB + '");';
-			script += 'if (typeof SncTriggerSynchronizer != "undefined") SncTriggerSynchronizer.executeNow(rec);';
-			script += 'else Packages.com.snc.automation.TriggerSynchronizer.executeNow(rec);';
+			var script = 'var rec = new GlideRecord("sysauto_script");' 
+			+ 'rec.get("' + JOB + '");'
+			+ 'if (typeof SncTriggerSynchronizer != "undefined") SncTriggerSynchronizer.executeNow(rec);'
+			+ 'else Packages.com.snc.automation.TriggerSynchronizer.executeNow(rec);';
 			return script;
 		}
 		catch(ex){
@@ -165,6 +145,41 @@ utils.prototype = {
 			gdt.add(-gdt.getTZOffset());
 
 			return gdt.getDisplayValue();
+		} 
+		catch(ex){
+			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
+		}
+	},
+
+	/* Takes table name, rec sys_id, from scope and to scope as arguments and returns script as string that can be passed to utils.sncTrigger as arg
+	   Use this function at caution convert records from custom scope to global or global to custom. Primarily created for fix scripts
+	*/
+	changeScopeScript: function(/*table name*/ table, /*sys_id*/ sysID, /*scope from*/ from, /*scope to*/ to){
+		if(table && sysID && from && to){
+			var query = "sys_id=" + sysID + "^sys_scope.name=" + from + "^sys_package.name=" + from;
+			var func = 'try {\n var gr = new GlideRecord("' + table +'"); \n gr.addEncodedQuery("' + query + '"); \n gr.query(); \n if(gr.next()){ \n  gr.sys_scope.setDisplayValue("' + to + '"); \n  gr.sys_package.setDisplayValue("' + to + '"); \n  gr.update(); \n } \n';
+			func +=  '} catch(ex) { \n gs.error("x_thjuh_lms.utils error at line - " + ex.lineNumber + "; Message: " + ex); \n}';
+			return func;
+		}
+		return null;
+	},
+	
+	/* Populate variables needed for RITM. Learning assignment is to be passed as an argument and returns varaibles object*/
+	ritmVariables: function(la){
+		try{
+			return {
+				"student_type": la.student.type.toString(),
+				"employee": la.student.user.sys_id.toString(),
+				"student_ref": la.student.sys_id.toString(),
+				"first_name": la.student.first_name.toString(),
+				"middle_name": la.student.middle_name.toString(),
+				"last_name": la.student.last_name.toString(),
+				"item": la.item.sys_id.toString(),
+				"assignment_ref": la.sys_id.toString(),
+				"completion_status": la.status.toString(),
+				"completion_date": la.completion_date.getDisplayValue(),
+				"access_required": (la.item.requires_access.toString() == "true") ? "Yes" : "No"
+			};
 		} 
 		catch(ex){
 			gs.error(this.errorLogMsg + ex + " at line " + ex.lineNumber);
@@ -233,7 +248,7 @@ utils.prototype = {
         <sys_created_on>2018-10-12 02:25:10</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>edebc352db816300d61452b0cf961940</sys_id>
-        <sys_mod_count>180</sys_mod_count>
+        <sys_mod_count>227</sys_mod_count>
         <sys_name>utils</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy>read</sys_policy>
@@ -241,6 +256,6 @@ utils.prototype = {
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sys_script_include_edebc352db816300d61452b0cf961940</sys_update_name>
         <sys_updated_by>PrakashP</sys_updated_by>
-        <sys_updated_on>2018-10-21 04:47:29</sys_updated_on>
+        <sys_updated_on>2018-10-24 03:44:27</sys_updated_on>
     </sys_script_include>
 </record_update>

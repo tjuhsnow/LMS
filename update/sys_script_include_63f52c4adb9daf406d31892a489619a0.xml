@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_thjuh_lms.lmsGlobalUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Contains functions that can be called only from global scope.</description>
+        <name>lmsGlobalUtils</name>
+        <script><![CDATA[var lmsGlobalUtils = Class.create();
+lmsGlobalUtils.prototype = {
+	initialize: function() {
+		this.isNotifyActive = GlidePluginManager().isActive("com.snc.notify");
+		this.isOnCallActive = GlidePluginManager().isActive("com.snc.on_call_rotation");
+		this.errorLogMsg = "lmsGlobalUtils error at line ";
+	},
+
+	//Send sms
+	sms: function(/*E164*/ from, /*E164*/ to, /*string*/ msg, /*GlideRecord*/ source) {
+		if(this.isNotifyActive){
+			try{
+				from = from ? from : new global.NotifyUtils().getNotifyOnTaskOutboundPhoneNumber();
+				return new global.SNC.Notify().sendSMS(from, to, msg, source); //returns sys_id of sent sms
+			}
+			catch(ex){
+				gs.error(this.errorLogMsg + ex.lineNumber + " - " + ex );
+			}
+		}
+	},
+	
+	//Make call
+	call: function(/*E164*/ from, /*E164*/ to, /*GlideRecord*/ source) {
+		if(this.isNotifyActive){
+			try{
+				from = from ? from : new global.NotifyUtils().getNotifyOnTaskOutboundPhoneNumber();
+				new global.SNC.Notify().call(from, to);
+				var call = new GlideRecord("notify_call");
+				call.addEncodedQuery("client=^calculated_name=" + to +"^ORDERBYDESCsys_created_on");
+				call.setLimit(1);
+				call.query();
+				if(call.next()){
+					call.client_table = source.getTableName();
+					call.client = source.sys_id.toString();
+					call.update();
+				}
+			}
+			catch(ex){
+				gs.error(this.errorLogMsg + ex.lineNumber + " - " + ex );
+			}
+		}
+	},
+
+	//Get current on-call rota for group.
+	getOnCallTech: function(/*string*/ grp) {
+		if(this.isNotifyActive){
+			try{
+				var user = new global.SNC.OnCallRotation().getEscalateeAt(grp, new GlideDateTime(), 1);
+				if(user){
+					return user;
+				}
+				return;
+			}
+			catch(ex){
+				gs.error(this.errorLogMsg + ex.lineNumber + " - " + ex );
+			}
+		}
+	},
+
+	type: 'lmsGlobalUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>PrakashP</sys_created_by>
+        <sys_created_on>2018-10-23 06:13:51</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>63f52c4adb9daf406d31892a489619a0</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>lmsGlobalUtils</sys_name>
+        <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
+        <sys_update_name>sys_script_include_63f52c4adb9daf406d31892a489619a0</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-10-24 06:21:52</sys_updated_on>
+    </sys_script_include>
+</record_update>

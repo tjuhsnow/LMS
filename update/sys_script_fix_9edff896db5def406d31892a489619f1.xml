@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <before>false</before>
+        <description>Change scoped scripts to global</description>
+        <flush_cache>false</flush_cache>
+        <name>Change scopes</name>
+        <run_once>true</run_once>
+        <script><![CDATA[var utils = new x_thjuh_lms.utils();
+
+var inboundSys = gs.getProperty("x_thjuh_lms.learning.assignment.inbound.action.sys_id");
+
+var includeSys = gs.getProperty("x_thjuh_lms.lmsGlobalUtils.sys_id");
+
+var from = "Global";
+
+var to = "LMS";
+
+//Change inboundAction scope
+try{
+	var actionScript = utils.changeScopeScript("sysevent_in_email_action", inboundSys, from, to);
+
+	utils.sncTrigger(actionScript, "LMS: Change inbound action scope", 0, 30);
+}
+catch(ex){
+	gs.error("LMS Fix Script error at line " + ex.lineNumber + "; Message: " + ex);
+}
+
+//Change lmsGlobalUtils scope
+try{
+	var includeScript = utils.changeScopeScript("sys_script_include", includeSys, from, to);
+
+	utils.sncTrigger(includeScript, "LMS: Change lmsGlobalUtils scope", 0, 60);
+}
+catch(ex){
+	gs.error("LMS Fix Script error at line " + ex.lineNumber + "; Message: " + ex);
+}
+]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>PrakashP</sys_created_by>
+        <sys_created_on>2018-10-24 02:56:08</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>9edff896db5def406d31892a489619f1</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Change scopes</sys_name>
+        <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
+        <sys_update_name>sys_script_fix_9edff896db5def406d31892a489619f1</sys_update_name>
+        <sys_updated_by>PrakashP</sys_updated_by>
+        <sys_updated_on>2018-10-24 06:20:41</sys_updated_on>
+        <unloadable>true</unloadable>
+    </sys_script_fix>
+</record_update>

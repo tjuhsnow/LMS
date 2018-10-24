@@ -51,7 +51,7 @@
         <sys_created_on>2018-10-11 15:47:15</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>52bbf812db492300d61452b0cf96198a</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>LMS: Training Request &amp; Access</sys_name>
         <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
         <sys_policy/>
@@ -59,7 +59,7 @@
         <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
         <sys_update_name>sc_cat_item_52bbf812db492300d61452b0cf96198a</sys_update_name>
         <sys_updated_by>PrakashP</sys_updated_by>
-        <sys_updated_on>2018-10-21 02:59:47</sys_updated_on>
+        <sys_updated_on>2018-10-21 09:32:25</sys_updated_on>
         <template/>
         <type>item</type>
         <use_sc_layout>true</use_sc_layout>
@@ -67,7 +67,7 @@
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>
-        <workflow/>
+        <workflow display_value="LMS: Default">07420f15dbdd2f406d31892a48961973</workflow>
         <x_yala_yds_allow_large_quantities>false</x_yala_yds_allow_large_quantities>
         <x_yala_yds_failsafe_sizing>false</x_yala_yds_failsafe_sizing>
         <x_yala_yds_render_in_iframe>false</x_yala_yds_render_in_iframe>
