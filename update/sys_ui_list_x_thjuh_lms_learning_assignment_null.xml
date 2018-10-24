@@ -4,197 +4,212 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>display_value</element>
-            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">3e8c9cf0db95e300d61452b0cf9619e5</list_id>
+            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e387ff56dbd52f402cddff09689619a0</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-19 07:54:47</sys_created_on>
-            <sys_id>f68c9cf0db95e300d61452b0cf9619e6</sys_id>
+            <sys_created_by>PrakashP</sys_created_by>
+            <sys_created_on>2018-10-24 15:42:34</sys_created_on>
+            <sys_id>ef87ff56dbd52f402cddff09689619a0</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-19 07:54:47</sys_updated_on>
+            <sys_updated_by>PrakashP</sys_updated_by>
+            <sys_updated_on>2018-10-24 15:42:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>type</element>
-            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">3e8c9cf0db95e300d61452b0cf9619e5</list_id>
+            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e387ff56dbd52f402cddff09689619a0</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-19 07:54:47</sys_created_on>
-            <sys_id>7e8c9cf0db95e300d61452b0cf9619e6</sys_id>
+            <sys_created_by>PrakashP</sys_created_by>
+            <sys_created_on>2018-10-24 15:42:34</sys_created_on>
+            <sys_id>a787ff56dbd52f402cddff09689619a1</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-19 07:54:47</sys_updated_on>
+            <sys_updated_by>PrakashP</sys_updated_by>
+            <sys_updated_on>2018-10-24 15:42:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>item</element>
-            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">3e8c9cf0db95e300d61452b0cf9619e5</list_id>
+            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e387ff56dbd52f402cddff09689619a0</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-19 07:54:47</sys_created_on>
-            <sys_id>fe8c9cf0db95e300d61452b0cf9619e6</sys_id>
+            <sys_created_by>PrakashP</sys_created_by>
+            <sys_created_on>2018-10-24 15:42:34</sys_created_on>
+            <sys_id>2b87ff56dbd52f402cddff09689619a1</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-19 07:54:47</sys_updated_on>
+            <sys_updated_by>PrakashP</sys_updated_by>
+            <sys_updated_on>2018-10-24 15:42:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>student</element>
-            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">3e8c9cf0db95e300d61452b0cf9619e5</list_id>
+            <element>item.priority_level</element>
+            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e387ff56dbd52f402cddff09689619a0</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-19 07:54:47</sys_created_on>
-            <sys_id>728c9cf0db95e300d61452b0cf9619e7</sys_id>
+            <sys_created_by>PrakashP</sys_created_by>
+            <sys_created_on>2018-10-24 15:42:34</sys_created_on>
+            <sys_id>ab87ff56dbd52f402cddff09689619a1</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-19 07:54:47</sys_updated_on>
+            <sys_updated_by>PrakashP</sys_updated_by>
+            <sys_updated_on>2018-10-24 15:42:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>student.user</element>
-            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">3e8c9cf0db95e300d61452b0cf9619e5</list_id>
+            <element>student</element>
+            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e387ff56dbd52f402cddff09689619a0</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>4</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-19 07:54:47</sys_created_on>
-            <sys_id>f28c9cf0db95e300d61452b0cf9619e7</sys_id>
+            <sys_created_by>PrakashP</sys_created_by>
+            <sys_created_on>2018-10-24 15:42:34</sys_created_on>
+            <sys_id>2f87ff56dbd52f402cddff09689619a1</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-19 07:54:47</sys_updated_on>
+            <sys_updated_by>PrakashP</sys_updated_by>
+            <sys_updated_on>2018-10-24 15:42:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>status</element>
-            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">3e8c9cf0db95e300d61452b0cf9619e5</list_id>
+            <element>student.user</element>
+            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e387ff56dbd52f402cddff09689619a0</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>5</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-19 07:54:47</sys_created_on>
-            <sys_id>768c9cf0db95e300d61452b0cf9619e7</sys_id>
+            <sys_created_by>PrakashP</sys_created_by>
+            <sys_created_on>2018-10-24 15:42:34</sys_created_on>
+            <sys_id>af87ff56dbd52f402cddff09689619a1</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-19 07:54:47</sys_updated_on>
+            <sys_updated_by>PrakashP</sys_updated_by>
+            <sys_updated_on>2018-10-24 15:42:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>status_id</element>
-            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">3e8c9cf0db95e300d61452b0cf9619e5</list_id>
+            <element>status</element>
+            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e387ff56dbd52f402cddff09689619a0</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>6</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-19 07:54:47</sys_created_on>
-            <sys_id>f68c9cf0db95e300d61452b0cf9619e7</sys_id>
+            <sys_created_by>PrakashP</sys_created_by>
+            <sys_created_on>2018-10-24 15:42:34</sys_created_on>
+            <sys_id>2387ff56dbd52f402cddff09689619a2</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-19 07:54:47</sys_updated_on>
+            <sys_updated_by>PrakashP</sys_updated_by>
+            <sys_updated_on>2018-10-24 15:42:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>completion_date</element>
-            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">3e8c9cf0db95e300d61452b0cf9619e5</list_id>
+            <element>status_id</element>
+            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e387ff56dbd52f402cddff09689619a0</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>7</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-19 07:54:47</sys_created_on>
-            <sys_id>7a8c9cf0db95e300d61452b0cf9619e7</sys_id>
+            <sys_created_by>PrakashP</sys_created_by>
+            <sys_created_on>2018-10-24 15:42:34</sys_created_on>
+            <sys_id>a387ff56dbd52f402cddff09689619a2</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-19 07:54:47</sys_updated_on>
+            <sys_updated_by>PrakashP</sys_updated_by>
+            <sys_updated_on>2018-10-24 15:42:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>request</element>
-            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">3e8c9cf0db95e300d61452b0cf9619e5</list_id>
+            <element>completion_date</element>
+            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e387ff56dbd52f402cddff09689619a0</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>8</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-19 07:54:47</sys_created_on>
-            <sys_id>fa8c9cf0db95e300d61452b0cf9619e7</sys_id>
+            <sys_created_by>PrakashP</sys_created_by>
+            <sys_created_on>2018-10-24 15:42:34</sys_created_on>
+            <sys_id>2787ff56dbd52f402cddff09689619a2</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-19 07:54:47</sys_updated_on>
+            <sys_updated_by>PrakashP</sys_updated_by>
+            <sys_updated_on>2018-10-24 15:42:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>requested_item</element>
-            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">3e8c9cf0db95e300d61452b0cf9619e5</list_id>
+            <element>request</element>
+            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e387ff56dbd52f402cddff09689619a0</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>9</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-19 07:54:47</sys_created_on>
-            <sys_id>7e8c9cf0db95e300d61452b0cf9619e7</sys_id>
+            <sys_created_by>PrakashP</sys_created_by>
+            <sys_created_on>2018-10-24 15:42:34</sys_created_on>
+            <sys_id>a787ff56dbd52f402cddff09689619a2</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-19 07:54:47</sys_updated_on>
+            <sys_updated_by>PrakashP</sys_updated_by>
+            <sys_updated_on>2018-10-24 15:42:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>processed</element>
-            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">3e8c9cf0db95e300d61452b0cf9619e5</list_id>
+            <element>requested_item</element>
+            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e387ff56dbd52f402cddff09689619a0</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>10</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-19 07:54:47</sys_created_on>
-            <sys_id>fe8c9cf0db95e300d61452b0cf9619e7</sys_id>
+            <sys_created_by>PrakashP</sys_created_by>
+            <sys_created_on>2018-10-24 15:42:34</sys_created_on>
+            <sys_id>2b87ff56dbd52f402cddff09689619a2</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-19 07:54:47</sys_updated_on>
+            <sys_updated_by>PrakashP</sys_updated_by>
+            <sys_updated_on>2018-10-24 15:42:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>sys_created_on</element>
-            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">3e8c9cf0db95e300d61452b0cf9619e5</list_id>
+            <element>processed</element>
+            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e387ff56dbd52f402cddff09689619a0</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>11</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-19 07:54:47</sys_created_on>
-            <sys_id>728c9cf0db95e300d61452b0cf9619e8</sys_id>
+            <sys_created_by>PrakashP</sys_created_by>
+            <sys_created_on>2018-10-24 15:42:34</sys_created_on>
+            <sys_id>ab87ff56dbd52f402cddff09689619a2</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-19 07:54:47</sys_updated_on>
+            <sys_updated_by>PrakashP</sys_updated_by>
+            <sys_updated_on>2018-10-24 15:42:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>sys_updated_on</element>
-            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">3e8c9cf0db95e300d61452b0cf9619e5</list_id>
+            <element>sys_created_on</element>
+            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e387ff56dbd52f402cddff09689619a0</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>12</position>
             <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-19 07:54:47</sys_created_on>
-            <sys_id>f28c9cf0db95e300d61452b0cf9619e8</sys_id>
+            <sys_created_by>PrakashP</sys_created_by>
+            <sys_created_on>2018-10-24 15:42:34</sys_created_on>
+            <sys_id>2f87ff56dbd52f402cddff09689619a2</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-19 07:54:47</sys_updated_on>
+            <sys_updated_by>PrakashP</sys_updated_by>
+            <sys_updated_on>2018-10-24 15:42:34</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_updated_on</element>
+            <list_id display_value="x_thjuh_lms_learning_assignment" element="NULL" name="x_thjuh_lms_learning_assignment" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e387ff56dbd52f402cddff09689619a0</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>13</position>
+            <sum>false</sum>
+            <sys_created_by>PrakashP</sys_created_by>
+            <sys_created_on>2018-10-24 15:42:34</sys_created_on>
+            <sys_id>af87ff56dbd52f402cddff09689619a2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>PrakashP</sys_updated_by>
+            <sys_updated_on>2018-10-24 15:42:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -207,11 +222,11 @@
             <relationship/>
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-19 07:54:47</sys_created_on>
+            <sys_created_by>PrakashP</sys_created_by>
+            <sys_created_on>2018-10-24 15:42:34</sys_created_on>
             <sys_customer_update>false</sys_customer_update>
             <sys_domain>global</sys_domain>
-            <sys_id>3e8c9cf0db95e300d61452b0cf9619e5</sys_id>
+            <sys_id>e387ff56dbd52f402cddff09689619a0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_thjuh_lms_learning_assignment</sys_name>
             <sys_package display_value="LMS" source="x_thjuh_lms">f5f1298edb8163406d31892a48961967</sys_package>
@@ -219,8 +234,8 @@
             <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="LMS">f5f1298edb8163406d31892a48961967</sys_scope>
             <sys_update_name>sys_ui_list_x_thjuh_lms_learning_assignment_null</sys_update_name>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-19 07:54:47</sys_updated_on>
+            <sys_updated_by>PrakashP</sys_updated_by>
+            <sys_updated_on>2018-10-24 15:42:34</sys_updated_on>
             <sys_user/>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>
